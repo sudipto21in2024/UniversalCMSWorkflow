@@ -1,0 +1,70 @@
+{
+  "$schema": "https://annotator.dev/schemas/v1/config.json",
+  "project": {
+    "name": "Visual Block Annotator",
+    "version": "1.0.0"
+  },
+  "storage": {
+    "defaultInputDir": "./inputs",
+    "defaultOutputDir": "./inputs",
+    "imageExtensions": [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".webp",
+      ".svg"
+    ],
+    "annotationExtension": ".txt",
+    "format": "hybrid-yaml-markdown"
+  },
+  "taxonomy": {
+    "entityTypes": [
+      {
+        "id": "metaobject",
+        "label": "Shopify Metaobject",
+        "color": "#D6B992",
+        "hint": "Reusable content model across pages"
+      },
+      {
+        "id": "product_metafield",
+        "label": "Product Metafield",
+        "color": "#34D399",
+        "hint": "Scoped attribute attached to a product"
+      },
+      {
+        "id": "collection",
+        "label": "Curated Collection",
+        "color": "#C084FC",
+        "hint": "Taxonomy or lookbook collection group"
+      },
+      {
+        "id": "ui_component",
+        "label": "Standard UI Section",
+        "color": "#60A5FA",
+        "hint": "Static or prop-driven layout section"
+      },
+      {
+        "id": "custom",
+        "label": "Custom Tag",
+        "color": "#F472B6",
+        "hint": "Custom user-defined entity"
+      }
+    ],
+    "categories": [
+      "Hero Editorial",
+      "Interactive Radar Canvas",
+      "Product Grid / Showcase",
+      "Craftsmanship Narrative",
+      "Artisan Counter / Metrics",
+      "Lead Capture / Modal Form",
+      "Header & Navigation",
+      "Footer & Disclaimers"
+    ]
+  },
+  "canvas": {
+    "coordinateSystem": "percentage",
+    "precision": 2,
+    "minBlockSize": 1.5
+  },
+  "currentPreset": "wordpress-acf"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Bespoke Bridal Haute Couture Salon",
+  "version": "1.0.0",
+  "description": "Entity blueprint for Maison Aura Private Bridal Salon, introducing the bridal_atelier metaobject and bespoke bridal gown silhouettes with corsetry coordinates.",
+  "metaobjectDefinitions": [
+    {
+      "name": "Bridal Atelier Salon",
+      "type": "bridal_atelier",
+      "access": { "storefront": "PUBLIC_READ" },
+      "fieldDefinitions": [
+        { "name": "Salon Name", "key": "salon_name", "type": "single_line_text_field" },
+        { "name": "City", "key": "city", "type": "single_line_text_field" },
+        { "name": "Address", "key": "address", "type": "multi_line_text_field" },
+        { "name": "Lead Couturier", "key": "lead_couturier", "type": "single_line_text_field" },
+        { "name": "Private Appointment Notice", "key": "appointment_notice", "type": "multi_line_text_field" },
+        { "name": "Lead Time Weeks", "key": "lead_time_weeks", "type": "number_integer" },
+        { "name": "Media Asset URL", "key": "media_asset", "type": "single_line_text_field" }
+      ]
+    }
+  ],
+  "productMetafieldDefinitions": [
+    {
+      "name": "Bridal Train & Veil Specifications",
+      "namespace": "custom",
+      "key": "bridal_specs",
+      "type": "json",
+      "ownerType": "PRODUCT",
+      "access": { "storefront": "PUBLIC_READ" }
+    }
+  ],
+  "collections": [
+    {
+      "title": "Bespoke Bridal Salon 2026",
+      "handle": "bespoke-bridal-2026",
+      "descriptionHtml": "<p>Hand-sculpted bridal gowns crafted from Chantilly lace, Lyon silk organza, and micro-pearl embroidery.</p>",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+    }
+  ],
+  "metaobjects": [
+    {
+      "type": "bridal_atelier",
+      "handle": "vendome-private-bridal-salon",
+      "fields": [
+        { "key": "salon_name", "value": "Maison Aura Private Bridal Salon — Vendôme" },
+        { "key": "city", "value": "Paris" },
+        { "key": "address", "value": "18 Place Vendôme, 75001 Paris, France" },
+        { "key": "lead_couturier", "value": "Hélène de Saint-Germain" },
+        { "key": "appointment_notice", "value": "Fittings are reserved exclusively for bespoke commissions with a minimum 16-week lead time." },
+        { "key": "lead_time_weeks", "value": "16" },
+        { "key": "media_asset", "value": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "title": "Look B-01 — Reine de Nacre Bridal Gown",
+      "handle": "look-b-01-reine-de-nacre-bridal-gown",
+      "descriptionHtml": "<p>A bridal masterpiece in ivory silk gazar with a cascading cathedral train hand-embroidered with 80,000 freshwater seed pearls.</p>",
+      "productType": "Bridal Haute Couture",
+      "vendor": "Maison Aura",
+      "price": "34000.00",
+      "variants": [
+        { "title": "Bespoke Made to Measure", "price": "34000.00" }
+      ],
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85", "altText": "Reine de Nacre Bridal Gown" }
+      ],
+      "metafields": [
+        {
+          "namespace": "custom",
+          "key": "radar_coordinates",
+          "type": "json",
+          "value": "{\"silhouette\":\"Architectural Ballgown & Cathedral Train\",\"fabric_origin\":\"Lyon Silk Gazar & Seed Pearls\",\"savoir_faire_hours\":520,\"stitch_count\":80000,\"hotspots\":[{\"id\":\"pearl_corset\",\"label\":\"Seed Pearl Armature\",\"description\":\"Internal silk corset hand-embroidered with micro-pearls.\",\"x\":50.0,\"y\":32.0},{\"id\":\"cathedral_train\",\"label\":\"4-Meter Weighted Train\",\"description\":\"Reinforced horsehair hem ensuring ceremonial gliding.\",\"x\":42.0,\"y\":92.0}]}"
+        },
+        {
+          "namespace": "custom",
+          "key": "bridal_specs",
+          "type": "json",
+          "value": "{\"train_length_meters\":4.0,\"veil_pairing\":\"Chantilly Cathedral Veil\",\"fitting_sessions_recommended\":4}"
+        }
+      ]
+    }
+  ]
+}

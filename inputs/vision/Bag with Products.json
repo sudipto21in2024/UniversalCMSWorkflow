@@ -1,0 +1,47 @@
+{
+  "slug": "bag-with-products",
+  "title": "Shopping Bag (Drawer / Cart View)",
+  "pageOverview": "Interactive shopping bag slide-over drawer and cart page displaying active line items, quantity adjustment, subtotal calculation, free shipping progress bar, and checkout CTA.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "cart"
+  },
+  "totalBlocks": 3,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "cart_block_1",
+      "title": "Free Shipping Progress Bar",
+      "category": "Hero Section",
+      "entityType": "acf_options",
+      "targetSchema": "cart_free_shipping_bar",
+      "keyFields": ["threshold_amount", "current_cart_total", "progress_percentage"],
+      "notes": "Bar showing '$2.01 away from free shipping' with animated green progress fill.",
+      "figmaNodeMap": { "nodeId": "27309:799", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 0.0, "width": 100.0, "height": 10.0 }
+    },
+    {
+      "id": "cart_block_2",
+      "title": "Cart Line Items List",
+      "category": "Service Showcase",
+      "entityType": "custom_post_type",
+      "targetSchema": "cart_line_items",
+      "keyFields": ["items", "quantity_control", "remove_item"],
+      "notes": "List of cart items: Face Toner ($47.99), Body Wash ($49.99) with image thumbnail, variant size, and quantity picker.",
+      "figmaNodeMap": { "nodeId": "27309:799", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 10.0, "width": 100.0, "height": 60.0 }
+    },
+    {
+      "id": "cart_block_3",
+      "title": "Cart Order Summary & Checkout Action",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_options",
+      "targetSchema": "cart_checkout_summary",
+      "keyFields": ["subtotal", "shipping_estimate", "checkout_url"],
+      "notes": "Subtotal '$97.98', Taxes/Shipping calculated at checkout, Black 'Proceed to checkout' button.",
+      "figmaNodeMap": { "nodeId": "27309:799", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 70.0, "width": 100.0, "height": 30.0 }
+    }
+  ]
+}

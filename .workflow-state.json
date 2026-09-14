@@ -1,0 +1,53 @@
+{
+  "workflowId": "wf-skin-clinic-1789362763621",
+  "client": {
+    "slug": "skin-clinic",
+    "name": "Skin Clinic Luxury DTC",
+    "targetPlatform": "wordpress-php",
+    "targetName": "WordPress Classic PHP Theme",
+    "outputDir": "dist-client/template-parts",
+    "hasAcfProLicense": false,
+    "customFieldsPlugin": "free-acf-scf",
+    "lockedAt": "2026-09-14T05:12:43.621Z"
+  },
+  "status": "TARGET_LOCKED",
+  "lastUpdated": "2026-09-14T05:12:43.621Z",
+  "stages": {
+    "step-0-genesis-lock": {
+      "status": "COMPLETED",
+      "targetPlatform": "wordpress-php",
+      "completedAt": "2026-09-14T05:12:43.621Z"
+    },
+    "step-1-vision-modeling": {
+      "status": "COMPLETED",
+      "targetPlatform": "wordpress-php",
+      "completedAt": "2026-09-14T05:16:00.000Z",
+      "screensCount": 12
+    },
+    "step-2-html-approval": {
+      "status": "COMPLETED",
+      "previewFiles": [
+        "dist-preview/Homepage.html",
+        "dist-preview/product List page.html",
+        "dist-preview/product Details page.html",
+        "dist-preview/About Us.html",
+        "dist-preview/Journal Articles.html",
+        "dist-preview/Article.html",
+        "dist-preview/Bag with Products.html",
+        "dist-preview/Checkout Form.html"
+      ],
+      "completedAt": "2026-09-14T05:25:00.000Z"
+    },
+    "step-3-native-code-generation": {
+      "status": "COMPLETED",
+      "targetPlatform": "wordpress-php",
+      "themeDirectory": "dist-client",
+      "hasAcfProLicense": false,
+      "customFieldsPlugin": "free-acf-scf",
+      "sharedBlocksCount": 6,
+      "uniqueBlocksCount": 18,
+      "acfFieldGroupsCount": 12,
+      "completedAt": "2026-09-14T10:08:45.833Z"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "Project.MaisonAura",
+  "references": [
+    "Foundation.GlassMapper",
+    "Feature.HeroEditorial",
+    "Feature.CraftStory",
+    "Feature.Lookbook",
+    "Feature.BespokeInquiry"
+  ],
+  "items": {
+    "includes": [
+      {
+        "name": "templates",
+        "path": "/sitecore/templates/Project/MaisonAura",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "content",
+        "path": "/sitecore/content/MaisonAura",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "media",
+        "path": "/sitecore/media library/Project/MaisonAura",
+        "scope": "ItemAndDescendants"
+      }
+    ]
+  }
+}

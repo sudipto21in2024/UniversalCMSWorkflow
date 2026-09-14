@@ -1,0 +1,58 @@
+{
+  "slug": "about-us",
+  "title": "About Us Story Page",
+  "pageOverview": "Brand storytelling and dermatology philosophy page with mission statement, editorial founder spotlight, craftsmanship values, and press accolades.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "page"
+  },
+  "totalBlocks": 4,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "about_block_1",
+      "title": "About Hero Narrative",
+      "category": "Hero Section",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "about_hero_narrative",
+      "keyFields": ["eyebrow", "headline", "hero_image", "story_body"],
+      "notes": "Large headline 'Rooted in nature, perfected by science' with full-bleed editorial imagery of clinical botanical cultivation.",
+      "figmaNodeMap": { "nodeId": "27309:826", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 0.0, "width": 100.0, "height": 30.0 }
+    },
+    {
+      "id": "about_block_2",
+      "title": "Our Core Values Grid",
+      "category": "Service Showcase",
+      "entityType": "acf_repeater",
+      "targetSchema": "about_values_grid",
+      "keyFields": ["value_title", "value_description", "value_icon"],
+      "notes": "3-column grid highlighting Purity, Clinical Efficacy, and Sustainable Sourcing.",
+      "figmaNodeMap": { "nodeId": "27309:826", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 30.0, "width": 100.0, "height": 30.0 }
+    },
+    {
+      "id": "about_block_3",
+      "title": "Editorial Founder Split",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "about_founder_split",
+      "keyFields": ["quote", "founder_name", "founder_title", "portrait_image"],
+      "notes": "50/50 split with founder portrait and personal statement on dermatological integrity.",
+      "figmaNodeMap": { "nodeId": "27309:826", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 60.0, "width": 100.0, "height": 25.0 }
+    },
+    {
+      "id": "about_block_4",
+      "title": "Newsletter Capture",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_newsletter_capture",
+      "keyFields": ["headline", "subheadline", "form_action_url"],
+      "notes": "Email subscription section.",
+      "figmaNodeMap": { "nodeId": "27309:826", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 85.0, "width": 100.0, "height": 15.0 }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Contentful Headless CMS Modeling",
+  "taxonomy": {
+    "entityTypes": [
+      {
+        "id": "content_type",
+        "label": "Content Type (Model)",
+        "color": "#0070F3",
+        "hint": "Reusable top-level Contentful content model"
+      },
+      {
+        "id": "component_reference",
+        "label": "Nested Reference (Entry)",
+        "color": "#10B981",
+        "hint": "1:1 or 1:N reference to another entry"
+      },
+      {
+        "id": "media_asset",
+        "label": "Media Asset / Gallery",
+        "color": "#F59E0B",
+        "hint": "Contentful Image/Video/Document asset"
+      },
+      {
+        "id": "rich_text",
+        "label": "Rich Text Zone",
+        "color": "#8B5CF6",
+        "hint": "Structured Contentful Rich Text with embeds"
+      },
+      {
+        "id": "slug_page",
+        "label": "Page Route / Slug Entry",
+        "color": "#EC4899",
+        "hint": "Page wrapper defining dynamic slug & SEO"
+      }
+    ],
+    "categories": [
+      "Hero Banner",
+      "Feature Grid",
+      "Article / Narrative Body",
+      "Testimonial Carousel",
+      "Call To Action (CTA)",
+      "Global Header Nav",
+      "Global Footer"
+    ]
+  }
+}

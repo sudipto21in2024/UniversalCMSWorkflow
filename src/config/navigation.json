@@ -1,0 +1,72 @@
+[
+  {
+    "id": "nav-dashboard",
+    "label": "Bosh sahifa",
+    "icon": "LayoutGrid",
+    "href": "/",
+    "badge": false
+  },
+  {
+    "id": "nav-monitoring",
+    "label": "Monitoring",
+    "icon": "FileText",
+    "href": "/monitoring",
+    "badge": true
+  },
+  {
+    "id": "nav-students",
+    "label": "Students",
+    "icon": "Users",
+    "href": "/students",
+    "badge": false
+  },
+  {
+    "id": "nav-services-upload",
+    "label": "Xizmatlarni yuklash",
+    "icon": "UploadCloud",
+    "href": "/services-upload",
+    "badge": false
+  },
+  {
+    "id": "nav-tasks",
+    "label": "Topshiriqlar",
+    "icon": "Briefcase",
+    "href": "/tasks",
+    "badge": false
+  },
+  {
+    "id": "nav-history",
+    "label": "Xizmatlar tarixi",
+    "icon": "History",
+    "href": "/history",
+    "badge": false
+  },
+  {
+    "id": "nav-customers",
+    "label": "Mijozlar",
+    "icon": "Users",
+    "href": "/customers",
+    "badge": false
+  },
+  {
+    "id": "nav-notes",
+    "label": "Eslatmalar",
+    "icon": "Lightbulb",
+    "href": "/notes",
+    "badge": false
+  },
+  {
+    "id": "nav-sms",
+    "label": "SMS sozlamalari",
+    "icon": "MessageSquare",
+    "href": "/sms-settings",
+    "badge": false
+  },
+  {
+    "id": "nav-staff",
+    "label": "Xodimlar",
+    "icon": "UserCog",
+    "href": "/staff",
+    "badge": false
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "name": "Next.js + Tailwind Component Architecture",
+  "taxonomy": {
+    "entityTypes": [
+      {
+        "id": "organism",
+        "label": "Organism / Section",
+        "color": "#60A5FA",
+        "hint": "Composite self-contained UI section"
+      },
+      {
+        "id": "molecule",
+        "label": "Molecule / Component",
+        "color": "#34D399",
+        "hint": "Multi-element functional component"
+      },
+      {
+        "id": "atom",
+        "label": "Atom / Primitive UI",
+        "color": "#F59E0B",
+        "hint": "Basic UI primitive (Button, Badge, Input)"
+      },
+      {
+        "id": "modal_dialog",
+        "label": "Modal / Slide-Over",
+        "color": "#EC4899",
+        "hint": "Interactive overlay or slide-over drawer"
+      },
+      {
+        "id": "dynamic_zone",
+        "label": "Dynamic Block / Slot",
+        "color": "#8B5CF6",
+        "hint": "Dynamic content slot for PageBuilder"
+      }
+    ],
+    "categories": [
+      "Hero & Banners",
+      "Data Ledger / Table",
+      "Filter & Search Drawer",
+      "Navigation & Universal Sidebar",
+      "Metrics & Statistics Cards",
+      "Form & Input Group",
+      "Interactive Canvas / Visual Radar",
+      "Modal & Dialog Overlays",
+      "Footer & Legal Bar",
+      "Other / Custom Section (Deep-Search)"
+    ]
+  }
+}

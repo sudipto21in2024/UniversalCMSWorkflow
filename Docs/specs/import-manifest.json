@@ -1,0 +1,102 @@
+{
+  "fileKey": "E-commerce Shopify Figma Template",
+  "fileName": "Skin-Clinic Luxury DTC",
+  "screens": [
+    {
+      "nodeId": "27309:222",
+      "userNodeId": "1-1332",
+      "name": "Homepage",
+      "targetRoute": "/",
+      "targetPageFile": "src/app/page.tsx",
+      "modulesDir": "src/components/modules/homepage"
+    },
+    {
+      "nodeId": "27309:768",
+      "userNodeId": "25306-6350",
+      "name": "Product List Page",
+      "targetRoute": "/products",
+      "targetPageFile": "src/app/products/page.tsx",
+      "modulesDir": "src/components/modules/products"
+    },
+    {
+      "nodeId": "27309:779",
+      "userNodeId": "25306-6758",
+      "name": "Product Details Page",
+      "targetRoute": "/products/[slug]",
+      "targetPageFile": "src/app/products/[slug]/page.tsx",
+      "modulesDir": "src/components/modules/product-details"
+    },
+    {
+      "nodeId": "27309:797",
+      "userNodeId": "25306-6796",
+      "name": "Bag Empty",
+      "targetRoute": "/cart/empty",
+      "targetPageFile": "src/app/cart/empty/page.tsx",
+      "modulesDir": "src/components/modules/cart-empty"
+    },
+    {
+      "nodeId": "27309:799",
+      "userNodeId": "25306-6794",
+      "name": "Bag with Products",
+      "targetRoute": "/cart",
+      "targetPageFile": "src/app/cart/page.tsx",
+      "modulesDir": "src/components/modules/cart"
+    },
+    {
+      "nodeId": "27309:812",
+      "userNodeId": "25306-6805",
+      "name": "Checkout Form",
+      "targetRoute": "/checkout",
+      "targetPageFile": "src/app/checkout/page.tsx",
+      "modulesDir": "src/components/modules/checkout-form"
+    },
+    {
+      "nodeId": "27309:814",
+      "userNodeId": "25306-6807",
+      "name": "Checkout Success",
+      "targetRoute": "/checkout/success",
+      "targetPageFile": "src/app/checkout/success/page.tsx",
+      "modulesDir": "src/components/modules/checkout-success"
+    },
+    {
+      "nodeId": "27309:826",
+      "userNodeId": "25306-6817",
+      "name": "About Us",
+      "targetRoute": "/about",
+      "targetPageFile": "src/app/about/page.tsx",
+      "modulesDir": "src/components/modules/about"
+    },
+    {
+      "nodeId": "27309:838",
+      "userNodeId": "25306-6825",
+      "name": "Journal Articles",
+      "targetRoute": "/journal",
+      "targetPageFile": "src/app/journal/page.tsx",
+      "modulesDir": "src/components/modules/journal"
+    },
+    {
+      "nodeId": "27309:840",
+      "userNodeId": "1-7175",
+      "name": "Article",
+      "targetRoute": "/journal/[slug]",
+      "targetPageFile": "src/app/journal/[slug]/page.tsx",
+      "modulesDir": "src/components/modules/article"
+    },
+    {
+      "nodeId": "27309:987",
+      "userNodeId": "25306-6927",
+      "name": "Design System Styles",
+      "targetRoute": "/design-system/styles",
+      "targetPageFile": "src/app/design-system/styles/page.tsx",
+      "modulesDir": "src/components/modules/design-system-styles"
+    },
+    {
+      "nodeId": "27309:986",
+      "userNodeId": "25306-6926",
+      "name": "Design System Navigation",
+      "targetRoute": "/design-system/navigation",
+      "targetPageFile": "src/app/design-system/navigation/page.tsx",
+      "modulesDir": "src/components/modules/design-system-nav"
+    }
+  ]
+}

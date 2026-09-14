@@ -1,0 +1,81 @@
+{
+  "slug": "product-details-page",
+  "title": "Product Details Page (PDP)",
+  "pageOverview": "Single product template with hero gallery and buy box (size variants, quantity stepper, Add to bag CTA, collapsible accordions), editorial ritual narrative, 3-column key ingredients breakdown, cross-sell recommended products carousel, Instagram UGC feed, and newsletter capture.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "product",
+    "total_sections": 7
+  },
+  "totalBlocks": 7,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "pdp_block_1",
+      "title": "Product Hero & Purchasing Buy Box",
+      "category": "Hero Section",
+      "entityType": "custom_post_type",
+      "targetSchema": "single_product_buy_box",
+      "keyFields": ["title", "category_tag", "price", "size_variants", "quantity", "add_to_cart_cta", "free_shipping_notice", "gallery_images"],
+      "notes": "Left: Large product bottle photography with thumbnail carousel below. Right: Category 'FACE', Title 'Pure Solution Essence', Price '$49.99', description copy, Size pills ('100 ml', '250 ml', '500 ml'), Quantity picker ('- 1 +'), Solid black 'Add to cart' CTA, 'Free shipping over $50' notice, Collapsible accordions for DETAILS, HOW TO USE, and INGREDIENTS.",
+      "figmaNodeMap": { "nodeId": "27309:779", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 0.0, "width": 100.0, "height": 30.0 }
+    },
+    {
+      "id": "pdp_block_2",
+      "title": "Daily Glow Ritual Narrative Split",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_split_ritual",
+      "keyFields": ["headline", "instructions", "feature_image"],
+      "notes": "50/50 split. Left: Headline 'Your daily glow ritual' and step-by-step application instructions. Right: Macro photography of fingers applying essence to dewy collarbone.",
+      "figmaNodeMap": { "nodeId": "27309:779", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 30.0, "width": 100.0, "height": 18.0 }
+    },
+    {
+      "id": "pdp_block_3",
+      "title": "Key Active Ingredients Cards",
+      "category": "Service Showcase",
+      "entityType": "acf_repeater",
+      "targetSchema": "layout_ingredients_repeater",
+      "keyFields": ["ingredient_name", "ingredient_image", "ingredient_description"],
+      "notes": "3-column card breakdown: 1) Hyaluronic acid (petri-dish texture image), 2) Botanical extracts (water droplet image), 3) Glycerin (smooth white cream swatch image).",
+      "figmaNodeMap": { "nodeId": "27309:779", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 48.0, "width": 100.0, "height": 18.0 }
+    },
+    {
+      "id": "pdp_block_4",
+      "title": "You Might Also Like Recommendations",
+      "category": "Service Showcase",
+      "entityType": "custom_post_type",
+      "targetSchema": "layout_product_cross_sell",
+      "keyFields": ["section_title", "related_products_query"],
+      "notes": "Headline 'You might also like' with 4-column product carousel: Face Toner ($47.99 with -20% badge), Body Wash ($49.99), Body Serum ($49.99 with New badge), Face Mask ($49.99).",
+      "figmaNodeMap": { "nodeId": "27309:779", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 66.0, "width": 100.0, "height": 14.0 }
+    },
+    {
+      "id": "pdp_block_5",
+      "title": "Instagram UGC Gallery",
+      "category": "Service Showcase",
+      "entityType": "acf_repeater",
+      "targetSchema": "layout_instagram_feed",
+      "keyFields": ["instagram_handle", "gallery_images"],
+      "notes": "5-column square image grid with '@Skin—Clinic' branding.",
+      "figmaNodeMap": { "nodeId": "27309:779", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 80.0, "width": 100.0, "height": 10.0 }
+    },
+    {
+      "id": "pdp_block_6",
+      "title": "Newsletter Capture",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_newsletter_capture",
+      "keyFields": ["headline", "subheadline", "form_action_url"],
+      "notes": "Full-bleed editorial background with email capture.",
+      "figmaNodeMap": { "nodeId": "27309:779", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 90.0, "width": 100.0, "height": 10.0 }
+    }
+  ]
+}

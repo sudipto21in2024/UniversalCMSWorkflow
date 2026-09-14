@@ -1,0 +1,57 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js build
+/.next/
+/out/
+/build
+/storybook-static
+
+# heavy data dumps & distributions
+/Docs/DirectDataDump/
+/dist-preview/
+/dist-test/
+/dist-client/
+
+# heavy vision screenshots (stored locally in inputs/vision/)
+/inputs/vision/*.png
+/tools/visual-annotator/inputs/*.png
+
+# .NET / C# build artifacts (references)
+**/bin/
+**/obj/
+
+# archive packages
+*.zip
+*.tar.gz
+*.tgz
+
+# misc / os
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.pem
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

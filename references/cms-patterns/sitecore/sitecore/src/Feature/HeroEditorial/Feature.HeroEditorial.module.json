@@ -1,0 +1,20 @@
+{
+  "namespace": "Feature.HeroEditorial",
+  "references": [
+    "Foundation.GlassMapper"
+  ],
+  "items": {
+    "includes": [
+      {
+        "name": "templates",
+        "path": "/sitecore/templates/Feature/MaisonAura/HeroEditorial",
+        "scope": "ItemAndDescendants"
+      },
+      {
+        "name": "renderings",
+        "path": "/sitecore/layout/Renderings/Feature/MaisonAura/HeroEditorial",
+        "scope": "ItemAndDescendants"
+      }
+    ]
+  }
+}

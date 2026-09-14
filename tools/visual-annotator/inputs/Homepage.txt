@@ -1,0 +1,145 @@
+---
+page_slug: "Homepage"
+page_title: "Skin-Clinic E-Commerce Homepage"
+brand: "Skin-Clinic"
+theme_style: "minimalist_dermatology_luxury"
+primary_collection: "best-sellers"
+total_sections: "13"
+total_blocks: 13
+annotated_at: "2026-09-11T21:03:00.000Z"
+generator: "VisualBlockAnnotator-Studio-v1.0"
+---
+
+# Skin-Clinic E-Commerce Homepage
+
+Complete luxury organic skincare DTC brand homepage with hero editorial, product carousels, category spotlights, deep-dive ingredient narratives, dual banner promo cards, testimonials, and newsletter capture.
+
+---
+
+## [Block 1] Header & Primary Navigation Bar
+- **Coordinates**: X: 0.00%, Y: 0.00%, Width: 100.00%, Height: 1.25%
+- **Category**: Header & Navigation
+- **Target Entity**: Standard UI Component
+- **Key Fields**: brand_logo, nav_links, account_url, search_trigger, cart_badge
+- **Requirements & Notes**:
+  Minimalist header with brand mark 'Skin—Clinic' centered. Left links: Shop, About us, Journal. Right links: Account, Search, Bag with item count (0).
+
+---
+
+## [Block 2] Hero Editorial Banner
+- **Coordinates**: X: 0.00%, Y: 1.25%, Width: 100.00%, Height: 11.20%
+- **Category**: Hero Editorial
+- **Target Entity**: Metaobject (homepage_hero_editorial)
+- **Key Fields**: eyebrow, headline, cta_text, cta_url, background_image
+- **Requirements & Notes**:
+  Full-bleed hero banner featuring shadow play photography of 'Pure Solution Essence'. Eyebrow: 'DISCOVER NATURE'S FINEST INGREDIENTS'. Headline: 'Glow with nature's finest, every single day'. Glassmorphism translucent CTA button 'Shop now'.
+
+---
+
+## [Block 3] Best Sellers Product Carousel
+- **Coordinates**: X: 2.50%, Y: 13.00%, Width: 95.00%, Height: 7.00%
+- **Category**: Product Grid / Showcase
+- **Target Entity**: Collection
+- **Key Fields**: collection_handle, card_layout, discount_badge, new_badge
+- **Requirements & Notes**:
+  4-column product card grid. Products shown: Face Toner ($47.99 with -20% red pill), Body Wash ($49.99), Body Serum ($49.99 with 'New' badge), and Face Mask ($49.99). Displays clean packaging against minimalist off-white pedestal cards.
+
+---
+
+## [Block 4] Shop by Category Cards
+- **Coordinates**: X: 2.50%, Y: 20.80%, Width: 95.00%, Height: 6.80%
+- **Category**: Product Grid / Showcase
+- **Target Entity**: Collection
+- **Key Fields**: category_name, category_image, collection_url
+- **Requirements & Notes**:
+  3 large editorial macro tiles with floating glassmorphism blur pills at bottom: 'Creams' (close-up eye application), 'Serums' (pipette dropper ritual), and 'Lotion' (shoulder dewy application).
+
+---
+
+## [Block 5] Featured Products Carousel
+- **Coordinates**: X: 2.50%, Y: 28.50%, Width: 95.00%, Height: 7.00%
+- **Category**: Product Grid / Showcase
+- **Target Entity**: Collection
+- **Key Fields**: collection_handle, items_limit, badge_logic
+- **Requirements & Notes**:
+  4-column curated shelf displaying high-conversion SKUs with compare-at pricing and inventory tags ('-20%', 'New').
+
+---
+
+## [Block 6] Product Deep-Dive & Sheet Mask Feature
+- **Coordinates**: X: 2.50%, Y: 36.50%, Width: 95.00%, Height: 8.00%
+- **Category**: Craftsmanship Narrative
+- **Target Entity**: Product Metafield (custom.product_spotlight_split)
+- **Key Fields**: spotlight_product, headline, description, cta_text, cta_link
+- **Requirements & Notes**:
+  50/50 split layout. Left: Hand holding 'Dream Peptide Complex Mask' sheet packaging in directional sunlight. Right: Headline 'Hydrate & revitalize with our pure face mask', descriptive copy about natural botanical extracts, and outline CTA 'Shop the face mask'.
+
+---
+
+## [Block 7] Editorial Skincare Journal & Articles
+- **Coordinates**: X: 2.50%, Y: 45.30%, Width: 95.00%, Height: 8.50%
+- **Category**: Craftsmanship Narrative
+- **Target Entity**: Metaobject (editorial_journal_articles)
+- **Key Fields**: article_title, tags, featured_image, read_more_url
+- **Requirements & Notes**:
+  3-column skincare advice cards with category pills: 1) 'Tips for a natural skincare routine' (Tags: TIPS, GUIDE), 2) 'Science behind effective face masks' (Tag: SCIENCE), 3) 'Ingredients for glowing skin explained' (Tags: GUIDE, INSIGHT). Clean text link 'Read more'.
+
+---
+
+## [Block 8] Dual Promotional Showcase Banners
+- **Coordinates**: X: 2.50%, Y: 54.80%, Width: 95.00%, Height: 8.00%
+- **Category**: Hero Editorial
+- **Target Entity**: Metaobject (promo_split_banners)
+- **Key Fields**: banner_1_image, banner_1_title, banner_2_card_color, banner_2_cta
+- **Requirements & Notes**:
+  Two side-by-side promotional blocks: Left) Macro dropper bottle with translucent CTA 'Shop the essence'. Right) Warm neutral block with 'Skin—Clinic Gift Card' graphic and outline CTA 'Get a gift card'.
+
+---
+
+## [Block 9] Oceanic Aqua Narrative with Floating Product Card
+- **Coordinates**: X: 2.50%, Y: 63.80%, Width: 95.00%, Height: 8.20%
+- **Category**: Craftsmanship Narrative
+- **Target Entity**: Metaobject (oceanic_ingredient_story)
+- **Key Fields**: eyebrow, headline, background_video_or_image, pinned_product_ref
+- **Requirements & Notes**:
+  Full-width immersive deep-sea blue banner. Eyebrow: 'ESSENCE FOR A BRIGHTER COMPLEXION'. Headline: 'Pure hydration in every drop'. Features an interactive floating glass card on bottom-right embedding the 'Face Toner' ($47.99) with direct quick-add action.
+
+---
+
+## [Block 10] Client Testimonials & Verified Reviews
+- **Coordinates**: X: 2.50%, Y: 72.80%, Width: 95.00%, Height: 4.50%
+- **Category**: Artisan Counter / Metrics
+- **Target Entity**: Metaobject (client_reviews_carousel)
+- **Key Fields**: author_name, quote, linked_product_thumbnail, product_name
+- **Requirements & Notes**:
+  3-column verified client review cards: 1) Sara J. ('Face Toner transformed morning routine'), 2) Helen D. ('Body Serum left skin silky smooth'), 3) Kim W. ('Face Mask is a game-changer'). Each review includes a direct mini thumbnail linking to the product page.
+
+---
+
+## [Block 11] Instagram UGC Social Gallery Grid
+- **Coordinates**: X: 2.50%, Y: 78.00%, Width: 95.00%, Height: 6.80%
+- **Category**: Product Grid / Showcase
+- **Target Entity**: Standard UI Component
+- **Key Fields**: instagram_handle, feed_images, profile_url
+- **Requirements & Notes**:
+  Eyebrow 'FOLLOW US ON INSTAGRAM' and large branding '@Skin—Clinic'. 5-column square grid of close-up skin textures, natural botanicals, facial application, and product swatches.
+
+---
+
+## [Block 12] Newsletter & VIP Lead Capture Banner
+- **Coordinates**: X: 0.00%, Y: 85.50%, Width: 100.00%, Height: 7.50%
+- **Category**: Lead Capture / Modal Form
+- **Target Entity**: Metaobject (newsletter_lead_capture)
+- **Key Fields**: headline, description, input_placeholder, submit_action
+- **Requirements & Notes**:
+  Full-bleed editorial background image of warm interlocking hands. Centered text: 'Subscribe for exclusive deals' with subtitle 'Get exclusive access to the latest natural skincare deals and tips delivered straight to your inbox!' Clean underline email input field with submit arrow.
+
+---
+
+## [Block 13] Global Footer & Navigation Columns
+- **Coordinates**: X: 0.00%, Y: 93.00%, Width: 100.00%, Height: 7.00%
+- **Category**: Footer & Disclaimers
+- **Target Entity**: Standard UI Component
+- **Key Fields**: social_links, product_links, support_links, company_links, copyright_notice
+- **Requirements & Notes**:
+  4-column clean footer. Left: 'Skin—Clinic' brand logo and social icons (IG, FB, YouTube). Columns: Products (Creams, Serums, Lotions, Shop all), Support (FAQs, Return policy, Shipping policy, Start a return), Company (About us, Journal, Contact us). Bottom: Copyright © 2025 Skin—Clinic, Terms of service, Privacy policy, Cookies settings.

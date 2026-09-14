@@ -1,0 +1,59 @@
+{
+  "slug": "journal-articles",
+  "title": "Editorial Journal & Articles Archive",
+  "pageOverview": "Skincare knowledge hub and clinical advice archive featuring category filtering tabs, featured hero story, and responsive 3-column article card grid.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "post",
+    "taxonomy": "category"
+  },
+  "totalBlocks": 4,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "journal_block_1",
+      "title": "Journal Header & Category Filter Tabs",
+      "category": "Hero Section",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "journal_header_tabs",
+      "keyFields": ["title", "categories"],
+      "notes": "Header 'Journal' with category filter pills (All, Routines, Science, Ingredients, Lifestyle).",
+      "figmaNodeMap": { "nodeId": "27309:838", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 0.0, "width": 100.0, "height": 15.0 }
+    },
+    {
+      "id": "journal_block_2",
+      "title": "Featured Hero Article",
+      "category": "Hero Section",
+      "entityType": "custom_post_type",
+      "targetSchema": "journal_featured_hero",
+      "keyFields": ["featured_post_id", "read_time", "cta_text"],
+      "notes": "Large hero article card with full-bleed image and headline 'Tips for a natural skincare routine'.",
+      "figmaNodeMap": { "nodeId": "27309:838", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 15.0, "width": 100.0, "height": 35.0 }
+    },
+    {
+      "id": "journal_block_3",
+      "title": "Articles Grid Loop",
+      "category": "Blog / Post Query Grid",
+      "entityType": "custom_post_type",
+      "targetSchema": "journal_posts_grid",
+      "keyFields": ["posts_per_page", "pagination", "tags_display"],
+      "notes": "3-column grid of posts: 'Science behind effective face masks', 'Ingredients for glowing skin explained', etc.",
+      "figmaNodeMap": { "nodeId": "27309:838", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 50.0, "width": 100.0, "height": 35.0 }
+    },
+    {
+      "id": "journal_block_4",
+      "title": "Newsletter Subscription",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_newsletter_capture",
+      "keyFields": ["headline", "form_action_url"],
+      "notes": "Email capture block.",
+      "figmaNodeMap": { "nodeId": "27309:838", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 85.0, "width": 100.0, "height": 15.0 }
+    }
+  ]
+}

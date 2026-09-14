@@ -1,0 +1,40 @@
+{
+  "name": "Sitecore XM Cloud & Helix Architecture",
+  "taxonomy": {
+    "entityTypes": [
+      {
+        "id": "rendering_item",
+        "label": "Rendering Component Item",
+        "color": "#EB1C24",
+        "hint": "Sitecore JSS or Controller Rendering Item"
+      },
+      {
+        "id": "template_field",
+        "label": "Data Template Field",
+        "color": "#F37023",
+        "hint": "Helix Feature or Project Data Template field"
+      },
+      {
+        "id": "placeholder",
+        "label": "Dynamic Placeholder",
+        "color": "#802789",
+        "hint": "Layout placeholder area for dynamic injection"
+      },
+      {
+        "id": "content_item",
+        "label": "Standard Content Item",
+        "color": "#00A4E4",
+        "hint": "Master database content item"
+      }
+    ],
+    "categories": [
+      "Hero Editorial",
+      "Feature Narrative",
+      "Product Grid / Catalog",
+      "Form / Inquiry Component",
+      "Header & Navigation",
+      "Footer Bar",
+      "Other / Custom Section (Deep-Search)"
+    ]
+  }
+}

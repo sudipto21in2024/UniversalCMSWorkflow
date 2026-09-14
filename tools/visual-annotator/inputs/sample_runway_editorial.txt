@@ -1,0 +1,8 @@
+Page: Automne-Hiver 2026 Haute Couture Lookbook & Garment Radar
+Business Goal: Present the runway silhouettes with an interactive radar that lets clients inspect internal silk corsetry boning, 18k gold broderie threadwork, and weighted hem tape.
+Layout Notes:
+- Top: Full bleed editorial hero with subtitle and two CTAs ("Explore Lookbook", "Private Atelier Consultation").
+- Middle: Garment Radar canvas showing silhouette macro view with 3 pulsing hotspot pins (corset, gold embroidery, hem).
+- Right/Bottom: Savoir-faire hours counter (minimum 300h) and stitch count.
+- Bottom: Private VIP Salon Inquiry contact form with concierge email and appointment disclaimer.
+- References: Each look belongs to the Automne-Hiver 2026 collection and links to the master artisan profile of Madame Hélène de Saint-Germain.

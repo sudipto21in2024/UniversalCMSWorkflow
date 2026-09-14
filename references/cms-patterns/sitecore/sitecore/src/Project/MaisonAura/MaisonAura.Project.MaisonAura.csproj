@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>MaisonAura.Project.MaisonAura</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\GlassMapper\MaisonAura.Foundation.GlassMapper.csproj" />
+    <ProjectReference Include="..\..\Feature\HeroEditorial\MaisonAura.Feature.HeroEditorial.csproj" />
+    <ProjectReference Include="..\..\Feature\CraftStory\MaisonAura.Feature.CraftStory.csproj" />
+    <ProjectReference Include="..\..\Feature\Lookbook\MaisonAura.Feature.Lookbook.csproj" />
+    <ProjectReference Include="..\..\Feature\BespokeInquiry\MaisonAura.Feature.BespokeInquiry.csproj" />
+  </ItemGroup>
+</Project>

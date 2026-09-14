@@ -1,0 +1,21 @@
+{
+  "name": "visual-block-annotator",
+  "version": "1.0.0",
+  "description": "Standalone, portable visual block-level annotation studio for UI mockups with zero hardcoded folders",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs --port 4040"
+  },
+  "keywords": [
+    "annotator",
+    "vision",
+    "ai-mockups",
+    "bounding-box",
+    "zero-config",
+    "standalone"
+  ],
+  "author": "Maison Aura Architecture Team",
+  "license": "MIT"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "article",
+  "title": "Single Editorial Article View",
+  "pageOverview": "In-depth clinical skincare article with category eyebrow, publication metadata, editorial rich text body, pull quotes, inline product recommendations, and related articles shelf.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "post"
+  },
+  "totalBlocks": 4,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "article_block_1",
+      "title": "Article Header & Featured Image",
+      "category": "Hero Section",
+      "entityType": "custom_post_type",
+      "targetSchema": "single_article_header",
+      "keyFields": ["category_badge", "title", "published_date", "author", "featured_image"],
+      "notes": "Tag 'ROUTINES', Title 'Tips for a natural skincare routine', Date 'October 14, 2025', Author 'Dr. Elena Vance'.",
+      "figmaNodeMap": { "nodeId": "27309:840", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 0.0, "width": 100.0, "height": 30.0 }
+    },
+    {
+      "id": "article_block_2",
+      "title": "Editorial Rich Text Content & Pull Quotes",
+      "category": "Service Showcase",
+      "entityType": "custom_post_type",
+      "targetSchema": "single_article_body",
+      "keyFields": ["content_body", "pull_quote", "key_takeaways"],
+      "notes": "Clean editorial typography with 65ch readable measure and styled quotes.",
+      "figmaNodeMap": { "nodeId": "27309:840", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 30.0, "width": 100.0, "height": 40.0 }
+    },
+    {
+      "id": "article_block_3",
+      "title": "Featured Product In-Article Callout",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "article_product_callout",
+      "keyFields": ["product_id", "custom_cta"],
+      "notes": "Floating product showcase for 'Pure Solution Essence' ($49.99).",
+      "figmaNodeMap": { "nodeId": "27309:840", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 70.0, "width": 100.0, "height": 15.0 }
+    },
+    {
+      "id": "article_block_4",
+      "title": "Related Articles Grid",
+      "category": "Blog / Post Query Grid",
+      "entityType": "custom_post_type",
+      "targetSchema": "related_articles_query",
+      "keyFields": ["related_posts_query"],
+      "notes": "3-column grid of related posts.",
+      "figmaNodeMap": { "nodeId": "27309:840", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 85.0, "width": 100.0, "height": 15.0 }
+    }
+  ]
+}

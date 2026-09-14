@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/sitecore-cli",
+  "version": "6.0.0",
+  "modules": [
+    "src/*/*/*.module.json"
+  ],
+  "plugins": [
+    "Sitecore.DevEx.Extensibility.Serialization@6.0.0",
+    "Sitecore.DevEx.Extensibility.Publishing@6.0.0",
+    "Sitecore.DevEx.Extensibility.Indexing@6.0.0",
+    "Sitecore.DevEx.Extensibility.ResourcePackage@6.0.0"
+  ],
+  "serialization": {
+    "defaultMaxRelativePathLength": 130,
+    "defaultModuleRelativeSerializationPath": "serialization"
+  }
+}

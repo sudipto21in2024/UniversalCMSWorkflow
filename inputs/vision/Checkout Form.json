@@ -1,0 +1,47 @@
+{
+  "slug": "checkout-form",
+  "title": "Minimalist Checkout Flow",
+  "pageOverview": "Streamlined single-page checkout flow with Express Pay triggers, contact info, shipping address fields, payment options, and sticky order breakdown.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "checkout"
+  },
+  "totalBlocks": 3,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "chk_block_1",
+      "title": "Express Payment & Contact Capture",
+      "category": "Hero Section",
+      "entityType": "acf_options",
+      "targetSchema": "checkout_express_pay",
+      "keyFields": ["shop_pay_enabled", "apple_pay_enabled", "email_input"],
+      "notes": "Express checkout buttons with email input.",
+      "figmaNodeMap": { "nodeId": "27309:812", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 0.0, "width": 60.0, "height": 30.0 }
+    },
+    {
+      "id": "chk_block_2",
+      "title": "Shipping & Payment Details Form",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_options",
+      "targetSchema": "checkout_form_fields",
+      "keyFields": ["shipping_address_fields", "shipping_methods", "payment_gateways"],
+      "notes": "First/Last Name, Address, Apartment, City, State, ZIP, Phone, Credit Card inputs.",
+      "figmaNodeMap": { "nodeId": "27309:812", "nodeName": "Desktop" },
+      "coordinates": { "x": 0.0, "y": 30.0, "width": 60.0, "height": 70.0 }
+    },
+    {
+      "id": "chk_block_3",
+      "title": "Collapsible Order Summary Sidebar",
+      "category": "Service Showcase",
+      "entityType": "acf_options",
+      "targetSchema": "checkout_sidebar_summary",
+      "keyFields": ["cart_items", "discount_code_input", "subtotal", "shipping_cost", "total"],
+      "notes": "Right sticky panel with item thumbnails, quantities, line totals, promo code input, and final total ($107.98).",
+      "figmaNodeMap": { "nodeId": "27309:812", "nodeName": "Desktop" },
+      "coordinates": { "x": 60.0, "y": 0.0, "width": 40.0, "height": 100.0 }
+    }
+  ]
+}

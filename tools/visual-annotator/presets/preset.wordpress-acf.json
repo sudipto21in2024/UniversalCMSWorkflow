@@ -1,0 +1,47 @@
+{
+  "name": "WordPress ACF Pro & OpenFields Architecture",
+  "taxonomy": {
+    "entityTypes": [
+      {
+        "id": "acf_flexible_content",
+        "label": "ACF Flexible Content Block",
+        "color": "#2271B1",
+        "hint": "Dynamic section in flexible layout"
+      },
+      {
+        "id": "custom_post_type",
+        "label": "Custom Post Type (CPT)",
+        "color": "#00A32A",
+        "hint": "Discrete data entity (Services, Team, Projects)"
+      },
+      {
+        "id": "acf_repeater",
+        "label": "ACF Repeater / Subfields",
+        "color": "#D94F00",
+        "hint": "Repeating cards or row items"
+      },
+      {
+        "id": "gutenberg_block",
+        "label": "Native Gutenberg Block",
+        "color": "#68DE7C",
+        "hint": "React/Block.json modular block"
+      },
+      {
+        "id": "acf_options",
+        "label": "Global Theme Options",
+        "color": "#9B51E0",
+        "hint": "Site-wide header, footer, or global settings"
+      }
+    ],
+    "categories": [
+      "Hero Section",
+      "Service Showcase",
+      "Blog / Post Query Grid",
+      "Callout & Lead Capture",
+      "Accordion & FAQs",
+      "Header Navigation",
+      "Footer Bar",
+      "Other / Custom Section (Deep-Search)"
+    ]
+  }
+}

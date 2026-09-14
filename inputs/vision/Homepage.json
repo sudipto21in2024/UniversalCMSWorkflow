@@ -1,0 +1,263 @@
+{
+  "slug": "Homepage",
+  "title": "Skin-Clinic E-Commerce Homepage",
+  "pageOverview": "Complete luxury organic skincare DTC brand homepage with hero editorial, product carousels, category spotlights, deep-dive ingredient narratives, dual banner promo cards, testimonials, and newsletter capture modeled for WordPress Classic PHP + ACF Pro / Secure Custom Fields.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "theme_style": "minimalist_dermatology_luxury",
+    "targetPlatform": "wordpress-php",
+    "primary_cpt": "product",
+    "total_sections": 13
+  },
+  "totalBlocks": 13,
+  "updatedAt": "2026-09-14T10:43:00.000Z",
+  "blocks": [
+    {
+      "id": "block_1",
+      "title": "Header & Primary Navigation Bar",
+      "category": "Header Navigation",
+      "entityType": "acf_options",
+      "targetSchema": "global_header_options",
+      "keyFields": ["brand_logo", "primary_menu", "account_url", "search_enabled", "cart_endpoint"],
+      "notes": "Minimalist header with brand mark 'Skin—Clinic' centered. Left links: Shop, About us, Journal. Right links: Account, Search, Bag with item count (0).",
+      "figmaNodeMap": {
+        "nodeId": "27309:398",
+        "nodeName": "Global Navigation Desktop"
+      },
+      "coordinates": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 100.0,
+        "height": 1.25
+      }
+    },
+    {
+      "id": "block_2",
+      "title": "Hero Editorial Banner",
+      "category": "Hero Section",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_hero_editorial",
+      "keyFields": ["hero_eyebrow", "hero_headline", "cta_text", "cta_url", "background_image"],
+      "notes": "Full-bleed hero banner featuring shadow play photography of 'Pure Solution Essence'. Eyebrow: 'DISCOVER NATURE'S FINEST INGREDIENTS'. Headline: 'Glow with nature's finest, every single day'. Glassmorphism translucent CTA button 'Shop now'.",
+      "figmaNodeMap": {
+        "nodeId": "27309:223",
+        "nodeName": "Hero"
+      },
+      "coordinates": {
+        "x": 0.0,
+        "y": 1.25,
+        "width": 100.0,
+        "height": 11.2
+      }
+    },
+    {
+      "id": "block_3",
+      "title": "Best Sellers Product Carousel",
+      "category": "Service Showcase",
+      "entityType": "custom_post_type",
+      "targetSchema": "layout_product_query_grid",
+      "keyFields": ["section_title", "product_category_term", "posts_per_page", "show_discount_badge"],
+      "notes": "4-column product card grid. Queries 'product' CPT items: Face Toner ($47.99 with -20% red pill), Body Wash ($49.99), Body Serum ($49.99 with 'New' badge), and Face Mask ($49.99). Displays clean packaging against minimalist off-white pedestal cards.",
+      "figmaNodeMap": {
+        "nodeId": "27309:229",
+        "nodeName": "Products"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 13.0,
+        "width": 95.0,
+        "height": 7.0
+      }
+    },
+    {
+      "id": "block_4",
+      "title": "Shop by Category Cards",
+      "category": "Service Showcase",
+      "entityType": "acf_repeater",
+      "targetSchema": "layout_category_tiles",
+      "keyFields": ["category_name", "category_image", "taxonomy_link"],
+      "notes": "3 large editorial macro tiles with floating glassmorphism blur pills at bottom: 'Creams' (close-up eye application), 'Serums' (pipette dropper ritual), and 'Lotion' (shoulder dewy application).",
+      "figmaNodeMap": {
+        "nodeId": "27309:256",
+        "nodeName": "Category Section"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 20.8,
+        "width": 95.0,
+        "height": 6.8
+      }
+    },
+    {
+      "id": "block_5",
+      "title": "Featured Products Shelf",
+      "category": "Service Showcase",
+      "entityType": "custom_post_type",
+      "targetSchema": "layout_featured_products",
+      "keyFields": ["section_title", "featured_products_ids", "enable_quick_add"],
+      "notes": "4-column curated shelf displaying high-conversion SKUs with compare-at pricing and inventory tags ('-20%', 'New').",
+      "figmaNodeMap": {
+        "nodeId": "27309:271",
+        "nodeName": "Products"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 28.5,
+        "width": 95.0,
+        "height": 7.0
+      }
+    },
+    {
+      "id": "block_6",
+      "title": "Product Deep-Dive & Sheet Mask Feature",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_split_narrative",
+      "keyFields": ["split_image", "headline", "description", "cta_text", "cta_url"],
+      "notes": "50/50 split layout. Left: Hand holding 'Dream Peptide Complex Mask' sheet packaging in directional sunlight. Right: Headline 'Hydrate & revitalize with our pure face mask', descriptive copy about natural botanical extracts, and outline CTA 'Shop the face mask'.",
+      "figmaNodeMap": {
+        "nodeId": "27309:298",
+        "nodeName": "Image Left Section"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 36.5,
+        "width": 95.0,
+        "height": 8.0
+      }
+    },
+    {
+      "id": "block_7",
+      "title": "Editorial Skincare Journal & Articles",
+      "category": "Blog / Post Query Grid",
+      "entityType": "custom_post_type",
+      "targetSchema": "layout_journal_articles_grid",
+      "keyFields": ["post_type", "taxonomy_filter", "posts_limit", "view_all_link"],
+      "notes": "3-column skincare advice cards with category pills: 1) 'Tips for a natural skincare routine' (Tags: TIPS, GUIDE), 2) 'Science behind effective face masks' (Tag: SCIENCE), 3) 'Ingredients for glowing skin explained' (Tags: GUIDE, INSIGHT). Clean text link 'Read more'.",
+      "figmaNodeMap": {
+        "nodeId": "27309:306",
+        "nodeName": "Products"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 45.3,
+        "width": 95.0,
+        "height": 8.5
+      }
+    },
+    {
+      "id": "block_8",
+      "title": "Dual Promotional Showcase Banners",
+      "category": "Hero Section",
+      "entityType": "acf_repeater",
+      "targetSchema": "layout_dual_promo_banners",
+      "keyFields": ["banner_cards", "card_title", "card_image", "card_cta"],
+      "notes": "Two side-by-side promotional blocks: Left) Macro dropper bottle with translucent CTA 'Shop the essence'. Right) Warm neutral block with 'Skin—Clinic Gift Card' graphic and outline CTA 'Get a gift card'.",
+      "figmaNodeMap": {
+        "nodeId": "27309:329",
+        "nodeName": "2 Items Grid"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 54.8,
+        "width": 95.0,
+        "height": 8.0
+      }
+    },
+    {
+      "id": "block_9",
+      "title": "Oceanic Aqua Narrative with Floating Product Card",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_full_image_overlay",
+      "keyFields": ["eyebrow", "headline", "background_image", "pinned_product_id"],
+      "notes": "Full-width immersive deep-sea blue banner. Eyebrow: 'ESSENCE FOR A BRIGHTER COMPLEXION'. Headline: 'Pure hydration in every drop'. Features an interactive floating card on bottom-right embedding the 'Face Toner' ($47.99) with direct add-to-bag action.",
+      "figmaNodeMap": {
+        "nodeId": "27309:340",
+        "nodeName": "Full Image Section"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 63.8,
+        "width": 95.0,
+        "height": 8.2
+      }
+    },
+    {
+      "id": "block_10",
+      "title": "Client Testimonials & Verified Reviews",
+      "category": "Accordion & FAQs",
+      "entityType": "acf_repeater",
+      "targetSchema": "layout_testimonials_repeater",
+      "keyFields": ["reviews", "client_name", "review_quote", "product_association"],
+      "notes": "3-column verified client review cards: 1) Sara J. ('Face Toner transformed morning routine'), 2) Helen D. ('Body Serum left skin silky smooth'), 3) Kim W. ('Face Mask is a game-changer'). Each review includes a direct mini thumbnail linking to the product page.",
+      "figmaNodeMap": {
+        "nodeId": "27309:354",
+        "nodeName": "Testimonials Section"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 72.8,
+        "width": 95.0,
+        "height": 4.5
+      }
+    },
+    {
+      "id": "block_11",
+      "title": "Instagram UGC Social Gallery Grid",
+      "category": "Service Showcase",
+      "entityType": "acf_repeater",
+      "targetSchema": "layout_instagram_feed",
+      "keyFields": ["instagram_handle", "gallery_images", "profile_url"],
+      "notes": "Eyebrow 'FOLLOW US ON INSTAGRAM' and large branding '@Skin—Clinic'. 5-column square grid of close-up skin textures, natural botanicals, facial application, and product swatches.",
+      "figmaNodeMap": {
+        "nodeId": "27309:381",
+        "nodeName": "Instagram Section"
+      },
+      "coordinates": {
+        "x": 2.5,
+        "y": 78.0,
+        "width": 95.0,
+        "height": 6.8
+      }
+    },
+    {
+      "id": "block_12",
+      "title": "Newsletter & VIP Lead Capture Banner",
+      "category": "Callout & Lead Capture",
+      "entityType": "acf_flexible_content",
+      "targetSchema": "layout_newsletter_capture",
+      "keyFields": ["headline", "subheadline", "form_action_url", "background_image"],
+      "notes": "Full-bleed editorial background image of warm interlocking hands. Centered text: 'Subscribe for exclusive deals' with subtitle 'Get exclusive access to the latest natural skincare deals and tips delivered straight to your inbox!' Clean underline email input field with submit arrow.",
+      "figmaNodeMap": {
+        "nodeId": "27309:391",
+        "nodeName": "Image Wrapper"
+      },
+      "coordinates": {
+        "x": 0.0,
+        "y": 85.5,
+        "width": 100.0,
+        "height": 7.5
+      }
+    },
+    {
+      "id": "block_13",
+      "title": "Global Footer & Navigation Columns",
+      "category": "Footer Bar",
+      "entityType": "acf_options",
+      "targetSchema": "global_footer_options",
+      "keyFields": ["footer_logo", "social_media_links", "product_menu", "support_menu", "company_menu", "copyright_text"],
+      "notes": "4-column clean footer. Left: 'Skin—Clinic' brand logo and social icons (IG, FB, YouTube). Columns: Products (Creams, Serums, Lotions, Shop all), Support (FAQs, Return policy, Shipping policy, Start a return), Company (About us, Journal, Contact us). Bottom: Copyright © 2025 Skin—Clinic, Terms of service, Privacy policy, Cookies settings.",
+      "figmaNodeMap": {
+        "nodeId": "27309:396",
+        "nodeName": "Footer"
+      },
+      "coordinates": {
+        "x": 0.0,
+        "y": 93.0,
+        "width": 100.0,
+        "height": 7.0
+      }
+    }
+  ]
+}

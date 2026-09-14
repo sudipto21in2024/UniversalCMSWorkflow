@@ -1,0 +1,210 @@
+{
+  "slug": "Homepage",
+  "title": "Skin-Clinic E-Commerce Homepage",
+  "pageOverview": "Complete luxury organic skincare DTC brand homepage with hero editorial, product carousels, category spotlights, deep-dive ingredient narratives, dual banner promo cards, testimonials, and newsletter capture.",
+  "frontmatter": {
+    "brand": "Skin-Clinic",
+    "theme_style": "minimalist_dermatology_luxury",
+    "primary_collection": "best-sellers",
+    "total_sections": 13
+  },
+  "totalBlocks": 13,
+  "updatedAt": "2026-09-11T21:03:00.000Z",
+  "blocks": [
+    {
+      "id": "block_1",
+      "title": "Header & Primary Navigation Bar",
+      "category": "Header & Navigation",
+      "entityType": "ui_component",
+      "targetSchema": "site_header_nav",
+      "keyFields": ["brand_logo", "nav_links", "account_url", "search_trigger", "cart_badge"],
+      "notes": "Minimalist header with brand mark 'Skin—Clinic' centered. Left links: Shop, About us, Journal. Right links: Account, Search, Bag with item count (0).",
+      "coordinates": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 100.0,
+        "height": 1.25
+      }
+    },
+    {
+      "id": "block_2",
+      "title": "Hero Editorial Banner",
+      "category": "Hero Editorial",
+      "entityType": "metaobject",
+      "targetSchema": "homepage_hero_editorial",
+      "keyFields": ["eyebrow", "headline", "cta_text", "cta_url", "background_image"],
+      "notes": "Full-bleed hero banner featuring shadow play photography of 'Pure Solution Essence'. Eyebrow: 'DISCOVER NATURE'S FINEST INGREDIENTS'. Headline: 'Glow with nature's finest, every single day'. Glassmorphism translucent CTA button 'Shop now'.",
+      "coordinates": {
+        "x": 0.0,
+        "y": 1.25,
+        "width": 100.0,
+        "height": 11.2
+      }
+    },
+    {
+      "id": "block_3",
+      "title": "Best Sellers Product Carousel",
+      "category": "Product Grid / Showcase",
+      "entityType": "collection",
+      "targetSchema": "collection_best_sellers",
+      "keyFields": ["collection_handle", "card_layout", "discount_badge", "new_badge"],
+      "notes": "4-column product card grid. Products shown: Face Toner ($47.99 with -20% red pill), Body Wash ($49.99), Body Serum ($49.99 with 'New' badge), and Face Mask ($49.99). Displays clean packaging against minimalist off-white pedestal cards.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 13.0,
+        "width": 95.0,
+        "height": 7.0
+      }
+    },
+    {
+      "id": "block_4",
+      "title": "Shop by Category Cards",
+      "category": "Product Grid / Showcase",
+      "entityType": "collection",
+      "targetSchema": "category_spotlight_tiles",
+      "keyFields": ["category_name", "category_image", "collection_url"],
+      "notes": "3 large editorial macro tiles with floating glassmorphism blur pills at bottom: 'Creams' (close-up eye application), 'Serums' (pipette dropper ritual), and 'Lotion' (shoulder dewy application).",
+      "coordinates": {
+        "x": 2.5,
+        "y": 20.8,
+        "width": 95.0,
+        "height": 6.8
+      }
+    },
+    {
+      "id": "block_5",
+      "title": "Featured Products Carousel",
+      "category": "Product Grid / Showcase",
+      "entityType": "collection",
+      "targetSchema": "collection_featured_products",
+      "keyFields": ["collection_handle", "items_limit", "badge_logic"],
+      "notes": "4-column curated shelf displaying high-conversion SKUs with compare-at pricing and inventory tags ('-20%', 'New').",
+      "coordinates": {
+        "x": 2.5,
+        "y": 28.5,
+        "width": 95.0,
+        "height": 7.0
+      }
+    },
+    {
+      "id": "block_6",
+      "title": "Product Deep-Dive & Sheet Mask Feature",
+      "category": "Craftsmanship Narrative",
+      "entityType": "product_metafield",
+      "targetSchema": "custom.product_spotlight_split",
+      "keyFields": ["spotlight_product", "headline", "description", "cta_text", "cta_link"],
+      "notes": "50/50 split layout. Left: Hand holding 'Dream Peptide Complex Mask' sheet packaging in directional sunlight. Right: Headline 'Hydrate & revitalize with our pure face mask', descriptive copy about natural botanical extracts, and outline CTA 'Shop the face mask'.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 36.5,
+        "width": 95.0,
+        "height": 8.0
+      }
+    },
+    {
+      "id": "block_7",
+      "title": "Editorial Skincare Journal & Articles",
+      "category": "Craftsmanship Narrative",
+      "entityType": "metaobject",
+      "targetSchema": "editorial_journal_articles",
+      "keyFields": ["article_title", "tags", "featured_image", "read_more_url"],
+      "notes": "3-column skincare advice cards with category pills: 1) 'Tips for a natural skincare routine' (Tags: TIPS, GUIDE), 2) 'Science behind effective face masks' (Tag: SCIENCE), 3) 'Ingredients for glowing skin explained' (Tags: GUIDE, INSIGHT). Clean text link 'Read more'.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 45.3,
+        "width": 95.0,
+        "height": 8.5
+      }
+    },
+    {
+      "id": "block_8",
+      "title": "Dual Promotional Showcase Banners",
+      "category": "Hero Editorial",
+      "entityType": "metaobject",
+      "targetSchema": "promo_split_banners",
+      "keyFields": ["banner_1_image", "banner_1_title", "banner_2_card_color", "banner_2_cta"],
+      "notes": "Two side-by-side promotional blocks: Left) Macro dropper bottle with translucent CTA 'Shop the essence'. Right) Warm neutral block with 'Skin—Clinic Gift Card' graphic and outline CTA 'Get a gift card'.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 54.8,
+        "width": 95.0,
+        "height": 8.0
+      }
+    },
+    {
+      "id": "block_9",
+      "title": "Oceanic Aqua Narrative with Floating Product Card",
+      "category": "Craftsmanship Narrative",
+      "entityType": "metaobject",
+      "targetSchema": "oceanic_ingredient_story",
+      "keyFields": ["eyebrow", "headline", "background_video_or_image", "pinned_product_ref"],
+      "notes": "Full-width immersive deep-sea blue banner. Eyebrow: 'ESSENCE FOR A BRIGHTER COMPLEXION'. Headline: 'Pure hydration in every drop'. Features an interactive floating glass card on bottom-right embedding the 'Face Toner' ($47.99) with direct quick-add action.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 63.8,
+        "width": 95.0,
+        "height": 8.2
+      }
+    },
+    {
+      "id": "block_10",
+      "title": "Client Testimonials & Verified Reviews",
+      "category": "Artisan Counter / Metrics",
+      "entityType": "metaobject",
+      "targetSchema": "client_reviews_carousel",
+      "keyFields": ["author_name", "quote", "linked_product_thumbnail", "product_name"],
+      "notes": "3-column verified client review cards: 1) Sara J. ('Face Toner transformed morning routine'), 2) Helen D. ('Body Serum left skin silky smooth'), 3) Kim W. ('Face Mask is a game-changer'). Each review includes a direct mini thumbnail linking to the product page.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 72.8,
+        "width": 95.0,
+        "height": 4.5
+      }
+    },
+    {
+      "id": "block_11",
+      "title": "Instagram UGC Social Gallery Grid",
+      "category": "Product Grid / Showcase",
+      "entityType": "ui_component",
+      "targetSchema": "instagram_social_feed",
+      "keyFields": ["instagram_handle", "feed_images", "profile_url"],
+      "notes": "Eyebrow 'FOLLOW US ON INSTAGRAM' and large branding '@Skin—Clinic'. 5-column square grid of close-up skin textures, natural botanicals, facial application, and product swatches.",
+      "coordinates": {
+        "x": 2.5,
+        "y": 78.0,
+        "width": 95.0,
+        "height": 6.8
+      }
+    },
+    {
+      "id": "block_12",
+      "title": "Newsletter & VIP Lead Capture Banner",
+      "category": "Lead Capture / Modal Form",
+      "entityType": "metaobject",
+      "targetSchema": "newsletter_lead_capture",
+      "keyFields": ["headline", "description", "input_placeholder", "submit_action"],
+      "notes": "Full-bleed editorial background image of warm interlocking hands. Centered text: 'Subscribe for exclusive deals' with subtitle 'Get exclusive access to the latest natural skincare deals and tips delivered straight to your inbox!' Clean underline email input field with submit arrow.",
+      "coordinates": {
+        "x": 0.0,
+        "y": 85.5,
+        "width": 100.0,
+        "height": 7.5
+      }
+    },
+    {
+      "id": "block_13",
+      "title": "Global Footer & Navigation Columns",
+      "category": "Footer & Disclaimers",
+      "entityType": "ui_component",
+      "targetSchema": "site_global_footer",
+      "keyFields": ["social_links", "product_links", "support_links", "company_links", "copyright_notice"],
+      "notes": "4-column clean footer. Left: 'Skin—Clinic' brand logo and social icons (IG, FB, YouTube). Columns: Products (Creams, Serums, Lotions, Shop all), Support (FAQs, Return policy, Shipping policy, Start a return), Company (About us, Journal, Contact us). Bottom: Copyright © 2025 Skin—Clinic, Terms of service, Privacy policy, Cookies settings.",
+      "coordinates": {
+        "x": 0.0,
+        "y": 93.0,
+        "width": 100.0,
+        "height": 7.0
+      }
+    }
+  ]
+}

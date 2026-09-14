@@ -1,0 +1,18 @@
+---
+ID: "d5c2a11b-7821-4f9e-a021-3964893e1101"
+Parent: "a1111111-2222-3333-4444-555555555555"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/MaisonAura/HeroEditorial/_HeroEditorial
+SharedFields:
+- ID: "12c0029a-561f-4cd7-ac94-943081a70861"
+  Hint: __Base template
+  Type: tree list
+  Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260909T080000Z

@@ -1,0 +1,28 @@
+---
+ID: "3c95a061-68f4-44c5-a01d-476e0a6f4e81"
+Parent: "0de95454-e1d6-496a-a142-d438a11501de"
+Template: "9f6b5c3e-12a4-428b-9e3f-78a1d3b62091"
+Path: /sitecore/content/MaisonAura/Home
+SharedFields:
+- ID: "f1a164d4-04f3-4d60-9034-0a0e4f417044"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s" p:p="1">
+      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r uid="{d5c2a11b-7821-4f9e-a021-3964893e1101}" p:after="r[@uid='{00000000-0000-0000-0000-000000000000}']" s:ds="" s:id="{D5C2A11B-7821-4F9E-A021-3964893E1101}" s:par="styles=hero-fullscreen-luxury" s:ph="aura-main" />
+        <r uid="{f8e4c32a-5521-419b-b921-9988224e2202}" p:after="r[@uid='{d5c2a11b-7821-4f9e-a021-3964893e1101}']" s:ds="" s:id="{F8E4C32A-5521-419B-B921-9988224E2202}" s:par="styles=section-padded-gold" s:ph="aura-main" />
+        <r uid="{b2e1f44a-9932-487c-a111-6655443e3303}" p:after="r[@uid='{f8e4c32a-5521-419b-b921-9988224e2202}']" s:ds="" s:id="{B2E1F44A-9932-487C-A111-6655443E3303}" s:par="styles=grid-luxury-quad" s:ph="aura-main" />
+        <r uid="{e3b8a911-3322-4411-9922-1122334e5505}" p:after="r[@uid='{b2e1f44a-9932-487c-a111-6655443e3303}']" s:ds="" s:id="{E3B8A911-3322-4411-9922-1122334E5505}" s:par="styles=inquiry-glass-gold" s:ph="aura-main" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260909T080000Z
+    - ID: "d0590829-d5c2-4a0b-8d14-3d07e60e0a5c"
+      Hint: PageTitle
+      Value: "Maison Aura — Haute Couture & High Horology"

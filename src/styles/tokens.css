@@ -1,0 +1,110 @@
+/* src/styles/tokens.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  --font-heading: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography Scale */
+  --text-display: clamp(2.5rem, 5vw, 3.5rem); /* 40px - 56px */
+  --text-h1: clamp(2rem, 3.5vw, 2.5rem);      /* 32px - 40px */
+  --text-h2: clamp(1.5rem, 2.5vw, 1.75rem);   /* 24px - 28px */
+  --text-h3: 1.25rem;                         /* 20px */
+  --text-h4: 1.125rem;                        /* 18px */
+  --text-base: 1rem;                          /* 16px */
+  --text-sm: 0.875rem;                        /* 14px */
+  --text-xs: 0.75rem;                         /* 12px */
+
+  --tracking-tight: -0.06em;
+  --tracking-normal: -0.02em;
+  --tracking-wide: 0.08em;
+
+  /* ==========================================================================
+     Surface & Backgrounds (Light Mode - Primary)
+     ========================================================================== */
+  --bg-app: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F7F7F7;
+  --bg-surface-muted: #EBEBEB;
+  --bg-surface-dark: #000000;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --border-glass: rgba(0, 0, 0, 0.06);
+
+  /* ==========================================================================
+     Text & Foregrounds
+     ========================================================================== */
+  --text-primary: #000000;
+  --text-secondary: #858585;
+  --text-muted: #999999;
+  --text-inverse: #FFFFFF;
+  --text-brand: #000000;
+
+  /* ==========================================================================
+     Brand / Accent Colors
+     ========================================================================== */
+  --color-primary: #000000;
+  --color-primary-hover: #262626;
+  --color-primary-subtle: #F7F7F7;
+  --color-badge-discount: #E01715;
+  --color-badge-new: #000000;
+  --color-badge-stock: #2E7D32;
+
+  /* ==========================================================================
+     Status & Feedback
+     ========================================================================== */
+  --color-success: #2E7D32;
+  --color-success-bg: #F1F8F1;
+  --color-error: #E01715;
+  --color-error-bg: #FDF2F2;
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FFFBEB;
+
+  /* ==========================================================================
+     Borders & Dividers
+     ========================================================================== */
+  --border-default: #E3E3E3;
+  --border-subtle: #F0F0F0;
+  --border-strong: #000000;
+  --border-focus: #000000;
+
+  /* ==========================================================================
+     Radii (Clean, sharp architectural luxury styling)
+     ========================================================================== */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Elevation & Shadows
+     ========================================================================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-dropdown: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.dark {
+  --bg-app: #0A0A0A;
+  --bg-surface: #121212;
+  --bg-surface-subtle: #1C1C1C;
+  --bg-surface-muted: #262626;
+  --bg-surface-dark: #000000;
+  --bg-glass: rgba(18, 18, 18, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-muted: #737373;
+  --text-inverse: #000000;
+
+  --border-default: #262626;
+  --border-subtle: #1F1F1F;
+  --border-strong: #FFFFFF;
+  --border-focus: #FFFFFF;
+}
