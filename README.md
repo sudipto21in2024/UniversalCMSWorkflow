@@ -305,3 +305,12 @@ UniversalCMSWorkflow/
 | `npm run export:client:zip` | Package standalone client deliverable as a `.zip` archive |
 | `npm run reset:workspace` | Wipe client artifacts and reset workspace back to baseline |
 | `npm run pipeline:full` | Run end-to-end audit: manifest build, preview assemble, block verification, and token linting |
+
+---
+
+## 📚 Core Documentation & Architecture Guides
+
+- **[Architectural Recommendations & Control Framework](file:///c:/Sudipto/UniversalCMSWorkflow/Docs/RECOMMENDED_ARCHITECTURAL_IMPROVEMENTS.md)**: Five strategic enhancements to eliminate ambiguity, ensure bidirectional traceability from Figma to code, and enforce deterministic quality gates.
+- **[Component Issues & Discrepancy Tracker](file:///c:/Sudipto/UniversalCMSWorkflow/Docs/COMPONENT_ISSUES_TRACKER.md)**: Permanent project audit ledger tracking component discrepancies, missing resources, and resolutions.
+- **[Historical Decisions & Conclusions](file:///c:/Sudipto/UniversalCMSWorkflow/Docs/HISTORICAL_DECISIONS_AND_CONCLUSIONS.md)**: Chronological autopsy and evolution of our architecture, verification loop, and anti-hallucination protocols.
+- **[AI Operating Guide (AGENTS.md)](file:///c:/Sudipto/UniversalCMSWorkflow/AGENTS.md)**: Mandatory rules, AST grounding directives, and subagent operational contract.
