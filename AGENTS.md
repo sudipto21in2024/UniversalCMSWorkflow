@@ -45,7 +45,27 @@ When tasks require specialized workflows, consult and leverage these skills in `
 
 ---
 
-## 3. Category "Other" & Semantic Deep-Search Protocol
+## 3. Mandatory AST-First Grounding Protocol (Anti-Hallucination)
+
+Before authoring, synthesizing, or repairing any UI component that has a mapped `figmaNodeId`:
+
+1. **Mandatory Spec Extraction**: Run the AST extractor:
+   ```bash
+   node scripts/figma-dump.mjs extract-spec <node_id>
+   ```
+2. **Ground Layout Alignment**: Never assume centered layouts. Inspect `layout.primaryAxisAlignItems`:
+   - `MAX`: Pin content to the bottom (`flex flex-col justify-end`).
+   - `MIN`: Pin content to the top (`flex flex-col justify-start`).
+   - `CENTER`: Vertically center (`flex flex-col justify-center items-center`).
+3. **Ground Glassmorphism & Interactive Elements**: Inspect `components` array:
+   - For buttons with `BACKGROUND_BLUR`: apply exact blur radius (`backdrop-blur-[Xpx]`), background opacity (`bg-white/[0.16]`), dimensions (`w-[Xpx] h-[Ypx]`), and corner radius.
+4. **Zero-Unchecked-Placeholders**:
+   - Strictly prohibit substituting generic Unsplash stock photos when authentic design photography exists in `Docs/DirectDataDump/` or `Docs/figma-data/asset-manifest.json`.
+   - If local assets exist, reference them in `assets/` and auto-inline via Playwright.
+
+---
+
+## 4. Category "Other" & Semantic Deep-Search Protocol
 
 When the AI vision model or developer encounters a bespoke, non-standard, or unmapped section:
 
