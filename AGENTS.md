@@ -47,7 +47,20 @@ When tasks require specialized workflows, consult and leverage these skills in `
 
 ## 3. Mandatory AST-First Grounding Protocol (Anti-Hallucination)
 
-Before authoring, synthesizing, or repairing any UI component that has a mapped `figmaNodeId`:
+### ⚠️ CRITICAL DIRECTIVE: STRICT HALT ON MISSING OR AMBIGUOUS FIGMA NODE ID
+**This rule is mandatory and must be strictly followed without exception across all agents and workflows:**
+1. **Missing or Unmapped Node ID**: If any block in `inputs/vision/*.json` or `*.manifest.json` does not have a `figmaNodeId` (or if it is null, blank, or undefined), **YOU MUST STOP THE PROCESS IMMEDIATELY.**
+2. **Ambiguity or Confusion**: If there is any confusion, ambiguity, uncertainty, or multiple candidate nodes returned during inspection or search, **DO NOT GUESS, DO NOT ASSUME, AND DO NOT PROCEED SILENTLY.**
+3. **Mandatory User Confirmation**:
+   - Immediately halt the execution pipeline.
+   - Present the block details (Block ID, title, visible text, Cartesian coordinates) and any potential candidate node IDs found to the user.
+   - Ask the user to confirm or provide the exact Figma Node ID.
+   - **Do NOT author, generate, or modify any HTML, PHP, Liquid, or React code until the user explicitly confirms the node ID.**
+
+---
+
+### AST-First Spec Extraction Protocol
+Before authoring, synthesizing, or repairing any UI component that has a confirmed `figmaNodeId`:
 
 1. **Mandatory Spec Extraction**: Run the AST extractor:
    ```bash
@@ -62,10 +75,43 @@ Before authoring, synthesizing, or repairing any UI component that has a mapped 
 4. **Zero-Unchecked-Placeholders**:
    - Strictly prohibit substituting generic Unsplash stock photos when authentic design photography exists in `Docs/DirectDataDump/` or `Docs/figma-data/asset-manifest.json`.
    - If local assets exist, reference them in `assets/` and auto-inline via Playwright.
+5. **Missing Resource & Inline Style Confirmation Gate**:
+   - If an asset (photo, image, vector icon) is missing or cannot be found in `assets/` or offline dumps, **DO NOT GUESS OR GENERATE PLACEHOLDERS SILENTLY**. The AI must stop and ask the user explicitly.
+   - If a color or style has to be placed inline (e.g. `style="..."` or non-token values), the AI must ask the user explicitly before inserting it.
+6. **In-Code Component Audit Header**:
+   - Whenever a component has an open issue, missing asset, or inline fallback, place a standardized comment header at the top of the file (`.html`, `.php`, `.tsx`, `.liquid`):
+     ```html
+     <!--
+     ================================================================================
+     COMPONENT AUDIT & DISCREPANCY LOG
+     Component   : [Component Name]
+     Block ID    : [block_id]
+     Figma Node  : [node_id]
+     Status      : PENDING_USER_INPUT | RESOLVED
+     Last Audit  : [YYYY-MM-DD]
+     --------------------------------------------------------------------------------
+     DISCREPANCIES & INLINE OVERRIDES:
+     - [YYYY-MM-DD] [STATUS]: [Description of issue or missing asset]
+       Resolution : [If resolved, describe resolution]
+     ================================================================================
+     -->
+     ```
+7. **Permanent Component Issues Tracking Ledger**:
+   - Every discrepancy, missing resource, and resolution must be recorded in `Docs/COMPONENT_ISSUES_TRACKER.md`.
+   - **STRICT NON-DELETION CONTRACT**: When an issue is resolved, update its status to `[RESOLVED]` with the resolution date and commit hash. **NEVER DELETE RESOLVED ENTRIES.**
+8. **Block-Level Custom CSS (`src/styles/blocks.css`)**:
+   - Root CSS with global design tokens remains untouched in `src/styles/tokens.css`.
+   - If block-level custom CSS is required, place it in `src/styles/blocks.css`.
+   - All block rules must be enclosed within explicit block boundary comments:
+     ```css
+     /* ---------<blockName>-------------- */
+     ... scoped block styles ...
+     /* ---------<blockName>-------------- */
+     ```
 
 ---
 
-## 4. Category "Other" & Semantic Deep-Search Protocol
+## 4. Category "Other", Semantic Deep-Search & User Confirmation Gate
 
 When the AI vision model or developer encounters a bespoke, non-standard, or unmapped section:
 
@@ -78,21 +124,24 @@ When the AI vision model or developer encounters a bespoke, non-standard, or unm
 - **Key Fields**: Enumerate candidate fields in `keyFields` (e.g. `doctor_name, rating, fee, slots, cta_booking`).
 - **Figma Node Map**: Leave `figmaNodeMap` empty/null by default unless manually pinning a specific node.
 
-### Step 2: Code Generation Deep-Search
+### Step 2: Deep-Search Discovery & Mandatory User Gate
 When the code generation agent (`nextjs-tailwind-architect`, `shopify-liquid-architect`, etc.) runs:
 1. It detects `category === "Other / Custom Section (Deep-Search)"` or empty `figmaNodeMap.nodeId`.
-2. It executes deep semantic search against the offline Figma AST dump:
+2. It executes deep semantic search against the offline Figma AST dump to find candidate matches:
    ```bash
    node scripts/figma-dump.mjs deep-search "<block.title> <block.notes> <block.keyFields>" --top=3
    ```
 3. The AST resolver scores containers by matching query terms against layer names, text characters (`characters`), and component definitions.
-4. The resolver returns:
-   - Matching container node ID and name.
-   - Text strings found within the node subtree.
-   - Exact dimensions (width and height).
-   - Extracted design tokens (dominant hex colors, font typography scales).
-   - Associated media assets from `Docs/figma-data/asset-manifest.json`.
-5. The code generator uses these exact tokens and AST hierarchy to generate pixel-faithful, responsive code.
+4. **MANDATORY USER CONFIRMATION STOP**:
+   - The AST resolver returns:
+     - Matching candidate container node IDs and layer names.
+     - Text strings found within the node subtrees.
+     - Exact dimensions (width and height).
+     - Extracted design tokens and media assets.
+   - **The agent MUST NOT automatically pick a candidate or generate code.**
+   - **The agent MUST STOP THE PROCESS** and report the candidate matches to the user.
+   - **The agent WAITS for explicit user confirmation** (e.g. *"Use node 27309:223"*) before proceeding.
+5. Once the user confirms the node ID, the code generator runs `node scripts/figma-dump.mjs extract-spec <node_id>` and synthesizes pixel-faithful, responsive code.
 
 ---
 

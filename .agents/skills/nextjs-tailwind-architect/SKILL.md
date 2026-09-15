@@ -36,15 +36,17 @@ Your mission is to translate visual layout zones (derived from `visual-annotator
 ### Step 1: Zone & Node Correlation
 - Read the target `[slug].json` from `inputs/vision/`.
 - Identify the Cartesian bounding boxes and category classification.
-- **Deep-Search Resolution**:
-  - If `block.category === "Other / Custom Section (Deep-Search)"` or `figmaNodeMap.nodeId` is blank:
-  - Construct query from `block.title`, `block.notes`, and `block.keyFields`.
-  - Execute:
+- **MANDATORY NODE ID CHECK & CONFIRMATION GATE**:
+  - If `figmaNodeMap.nodeId` is blank, missing, null, or if there is ANY ambiguity / confusion:
+    - **STOP THE PROCESS IMMEDIATELY.**
+    - If needed, run `node scripts/figma-dump.mjs deep-search "<query>" --top=3` to locate potential candidates.
+    - **DO NOT GUESS OR GENERATE CODE.**
+    - Present the candidate nodes to the user and request confirmation.
+    - Halt until the user explicitly confirms the node ID.
+  - Once the node ID is confirmed, extract the AST spec:
     ```bash
-    node scripts/figma-dump.mjs deep-search "<query>" --top=3
+    node scripts/figma-dump.mjs extract-spec <node_id>
     ```
-  - Retrieve the top matching container AST node, dimensions, dominant hex colors, typography scale, and assets.
-  - If `figmaNodeMap.nodeId` is explicitly provided, inspect it directly: `node scripts/figma-dump.mjs get-node <node_id>`.
 - Extract typographic styles, hex colors, gap values, and flex layouts, mapping them to `src/styles/tokens.css`.
 
 ### Step 2: Atomic Architecture & Scoping

@@ -31,6 +31,40 @@ console.log("\n╔════════════════════�
 console.log(`║      Closed-Loop Verification Gate: ${slugArg} (${blockArg})      ║`);
 console.log("╚══════════════════════════════════════════════════════╝\n");
 
+// Step 0: Check Figma Node ID Presence & Ambiguity
+const manifestPath = path.join(rootDir, "inputs", "vision", `${slugArg}.manifest.json`);
+const visionJsonPath = path.join(rootDir, "inputs", "vision", `${slugArg}.json`);
+
+let figmaNodeId = null;
+let blockTitle = blockArg;
+
+if (fs.existsSync(manifestPath)) {
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
+  const block = manifest.blocks?.[blockArg];
+  if (block) {
+    figmaNodeId = block.figmaNodeId;
+    blockTitle = block.title || blockArg;
+  }
+}
+
+if (!figmaNodeId && fs.existsSync(visionJsonPath)) {
+  const visionData = JSON.parse(fs.readFileSync(visionJsonPath, "utf-8"));
+  const block = (visionData.blocks || []).find((b) => b.id === blockArg);
+  if (block) {
+    figmaNodeId = block.figmaNodeMap?.nodeId || block.figmaNodeId;
+    blockTitle = block.title || blockTitle;
+  }
+}
+
+if (!figmaNodeId || typeof figmaNodeId !== "string" || figmaNodeId.trim() === "") {
+  console.error(`\n🚨 [STRICT HALT] Block "${blockArg}" ("${blockTitle}") in "${slugArg}" has NO Figma Node ID mapped.`);
+  console.error(`Mandatory Protocol: When a block node ID is missing or ambiguous, you MUST STOP and confirm with the user.`);
+  console.error(`Please ask the user to provide/confirm the exact Figma Node ID before proceeding.\n`);
+  process.exit(1);
+}
+
+console.log(`[0/3] Verified Figma Node ID: ${figmaNodeId} ("${blockTitle}")`);
+
 // Step 1: Re-assemble HTML preview
 console.log("[1/3] Assembling HTML previews...");
 try {
@@ -59,7 +93,6 @@ try {
 }
 
 // Check final manifest status
-const manifestPath = path.join(rootDir, "inputs", "vision", `${slugArg}.manifest.json`);
 if (fs.existsSync(manifestPath)) {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
   const block = manifest.blocks?.[blockArg];

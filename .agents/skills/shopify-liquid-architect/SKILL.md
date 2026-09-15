@@ -28,10 +28,13 @@ When invoked for a section (e.g. `hero-editorial`, `product-carousel`, `promo-sp
      - `blocks`: For repeatable elements (e.g. carousel slides, accordion items).
      - `presets`: Pre-configured defaults so merchants can add the section with one click.
 
-3. **Deep-Search & AST Grounding**:
-   - If the section has category `"Other / Custom Section (Deep-Search)"` or no explicit `nodeId`:
-   - Run `node scripts/figma-dump.mjs deep-search "<section-title> <notes> <keyFields>" --top=3`.
-   - Use the retrieved AST node's colors, typography, dimensions, and assets to configure matching Liquid schema default settings and Tailwind classes.
+3. **Mandatory Node ID Verification & User Gate**:
+   - If the section has category `"Other / Custom Section (Deep-Search)"`, lacks an explicit `nodeId`, or has any ambiguity:
+     - **STOP THE PROCESS IMMEDIATELY.**
+     - Run `node scripts/figma-dump.mjs deep-search "<section-title> <notes> <keyFields>" --top=3` if candidate discovery is needed.
+     - Present the candidates to the user and request confirmation.
+     - **DO NOT write Liquid code or schema until the user explicitly confirms the node ID.**
+   - Once confirmed, extract spec: `node scripts/figma-dump.mjs extract-spec <node_id>`.
 
 4. **Deterministic Section Handle Naming Convention**:
    - Section filenames must strictly match the canonical basename derived from `targetSchema`:

@@ -60,6 +60,14 @@ All template part filenames must be derived deterministically from the block's `
 - Unique components: `template-parts/blocks/unique/[canonicalBasename].php`
 - Companion ACF JSON: `dist-client/acf-json/group_[canonicalBasename].json`
 
+### Rule 6: Mandatory Halt on Missing or Ambiguous Figma Node ID
+- Before synthesizing or updating any WordPress template part, verify the block's `figmaNodeId`.
+- If the node ID is missing, blank, or if there is any ambiguity or confusion:
+  - **STOP THE PROCESS IMMEDIATELY.**
+  - Present the candidate details or missing block info to the user.
+  - Wait for explicit user confirmation before writing or updating any PHP template code.
+  - Once confirmed, run `node scripts/figma-dump.mjs extract-spec <node_id>`.
+
 ---
 
 ## 2. Universal Helper Abstraction Layer (`inc/field-helpers.php`)

@@ -20,6 +20,15 @@ if (!fs.existsSync(previewDir)) {
   fs.mkdirSync(previewDir, { recursive: true });
 }
 
+// Load Design Tokens and Block-Level Custom CSS
+const tokensCssPath = path.join(rootDir, "src/styles/tokens.css");
+const blocksCssPath = path.join(rootDir, "src/styles/blocks.css");
+const tokensCssContent = fs.existsSync(tokensCssPath) ? fs.readFileSync(tokensCssPath, "utf-8") : "";
+const blocksCssContent = fs.existsSync(blocksCssPath) ? fs.readFileSync(blocksCssPath, "utf-8") : "";
+
+if (tokensCssContent) fs.writeFileSync(path.join(previewDir, "tokens.css"), tokensCssContent);
+if (blocksCssContent) fs.writeFileSync(path.join(previewDir, "blocks.css"), blocksCssContent);
+
 // Helper to escape HTML attributes
 function escapeAttr(str) {
   if (!str) return "";
@@ -271,6 +280,12 @@ function wrapDocument(title, bodyContent) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&family=Inter:wght@300..900&display=swap" rel="stylesheet">
   <style>
+    /* Global Design Tokens */
+    ${tokensCssContent}
+
+    /* Scoped Block-Level Custom Styles */
+    ${blocksCssContent}
+
     body { font-family: 'Inter', -apple-system, sans-serif; letter-spacing: -0.04em; color: #000000; background-color: #FFFFFF; }
     h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Inter Tight', -apple-system, sans-serif; letter-spacing: -0.06em; }
 

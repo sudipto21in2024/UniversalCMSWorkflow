@@ -33,3 +33,30 @@
   - Switch immediately to the multi-modal AI Vision model using the corresponding screenshot in `inputs/vision/[slug].png` and bounding box notes in `inputs/vision/[slug].json`.
   - Extract layout structure, typography, and visible copy directly from the visual mockup.
 
+## 7. Mandatory Strict Halt on Missing or Ambiguous Figma Node ID
+- **Zero Guessing Mandate**: If any block lacks a `figmaNodeId` or if there is any ambiguity, confusion, or multiple candidate nodes:
+  - **STOP THE PROCESS IMMEDIATELY.**
+  - Present the block title, visible text, and potential candidate nodes to the user.
+  - Wait for explicit user confirmation before authoring or modifying code.
+
+## 8. Missing Resource & Inline Style Confirmation Gate
+- If an asset (image, picture, icon) is not available for any block, or if a non-token color/dimension must be placed inline:
+  - **STOP AND ASK THE USER EXPLICITLY.**
+  - Never guess, synthesize arbitrary external URLs (e.g. Unsplash), or insert unauthorized inline styles.
+
+## 9. In-Code Discrepancy Header & Central Ledger Governance
+- **In-Code Audit Header**: Whenever a block has a discrepancy, missing resource, or temporary override, place a structured comment block at the top of the component (`.html`, `.php`, `.tsx`, `.liquid`) detailing the issue, dates, and status so that any AI or developer can inspect it.
+- **Central Issues Tracker**: All component issues must be recorded in `Docs/COMPONENT_ISSUES_TRACKER.md`.
+- **Strict Non-Deletion Policy**: When an issue is fixed, update its status to `[RESOLVED]`. **NEVER DELETE RESOLVED ENTRIES.**
+
+## 10. Block-Level Custom CSS (`src/styles/blocks.css`)
+- Root CSS with global design tokens (`src/styles/tokens.css`) remains untouched.
+- If block-level custom CSS is required, place it in `src/styles/blocks.css`.
+- Scoped block styles must be enclosed within clear boundary comments:
+  ```css
+  /* ---------<blockName>-------------- */
+  ... block styles ...
+  /* ---------<blockName>-------------- */
+  ```
+
+

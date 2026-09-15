@@ -1,0 +1,104 @@
+/* src/styles/blocks.css */
+/* ==========================================================================
+   BLOCK-LEVEL CUSTOM CSS
+   
+   Global design tokens reside in tokens.css.
+   This file houses custom, block-specific styles, keyframe animations, 
+   pseudo-elements, and localized overrides for decoupled modular blocks.
+   
+   Format Contract:
+   Wrap each block section with clear, deterministic boundary comments:
+   ---------<blockName>--------------
+   ... block custom styles ...
+   ---------<blockName>--------------
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* ---------headerBlock-------------- */
+/* -------------------------------------------------------------------------- */
+.block-header-nav {
+  /* Header navigation custom overrides & transitions */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.block-header-nav .nav-dropdown-enter {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.block-header-nav .nav-dropdown-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+}
+/* ---------headerBlock-------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------announcementBarBlock-------------- */
+/* -------------------------------------------------------------------------- */
+.block-announcement-bar {
+  /* Announcement marquee / ticker styles */
+}
+/* ---------announcementBarBlock-------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------heroEditorialBlock-------------- */
+/* -------------------------------------------------------------------------- */
+.block-hero-editorial {
+  /* Hero editorial glassmorphic CTA and image treatment */
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.block-hero-editorial .hero-glass-cta {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(52px);
+  -webkit-backdrop-filter: blur(52px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.block-hero-editorial .hero-glass-cta:hover {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+/* ---------heroEditorialBlock-------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------bestSellersShelfBlock-------------- */
+/* -------------------------------------------------------------------------- */
+.block-best-sellers-shelf {
+  /* Product card hover micro-animations & badges */
+}
+
+.block-best-sellers-shelf .product-card-img {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.block-best-sellers-shelf .product-card:hover .product-card-img {
+  transform: scale(1.03);
+}
+/* ---------bestSellersShelfBlock-------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------categorySpotlightBlock-------------- */
+/* -------------------------------------------------------------------------- */
+.block-category-spotlight {
+  /* Category spotlight grid styling */
+}
+/* ---------categorySpotlightBlock-------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------footerGlobalBlock-------------- */
+/* -------------------------------------------------------------------------- */
+.block-footer-global {
+  /* Global footer styling */
+}
+/* ---------footerGlobalBlock-------------- */
