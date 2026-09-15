@@ -1,0 +1,162 @@
+{
+  "slug": "About Us",
+  "version": 2,
+  "sourceImage": "inputs/vision/About Us.png",
+  "sourceSpec": "inputs/vision/About Us.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.052Z",
+  "summary": {
+    "totalBlocks": 4,
+    "sharedBlocks": 1,
+    "uniqueBlocks": 3,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "about_block_1": {
+      "title": "About Hero Narrative",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "about_hero_narrative",
+      "canonicalBasename": "about-manifesto",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 30
+      },
+      "figmaNodeId": "27309:826",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "eyebrow",
+        "headline",
+        "hero_image",
+        "story_body"
+      ],
+      "notes": "Large headline 'Rooted in nature, perfected by science' with full-bleed editorial imagery of clinical botanical cultivation.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/about-manifesto.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/about-manifesto.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_about_manifesto.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.051Z"
+      }
+    },
+    "about_block_2": {
+      "title": "Our Core Values Grid",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "about_values_grid",
+      "canonicalBasename": "split-narrative",
+      "coordinates": {
+        "x": 0,
+        "y": 30,
+        "width": 100,
+        "height": 30
+      },
+      "figmaNodeId": "27309:826",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "value_title",
+        "value_description",
+        "value_icon"
+      ],
+      "notes": "3-column grid highlighting Purity, Clinical Efficacy, and Sustainable Sourcing.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/split-narrative.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/split-narrative.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_split_narrative.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.052Z"
+      }
+    },
+    "about_block_3": {
+      "title": "Editorial Founder Split",
+      "category": "Callout & Lead Capture",
+      "classification": "unique",
+      "targetSchema": "about_founder_split",
+      "canonicalBasename": "split-narrative",
+      "coordinates": {
+        "x": 0,
+        "y": 60,
+        "width": 100,
+        "height": 25
+      },
+      "figmaNodeId": "27309:826",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "quote",
+        "founder_name",
+        "founder_title",
+        "portrait_image"
+      ],
+      "notes": "50/50 split with founder portrait and personal statement on dermatological integrity.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/split-narrative.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/split-narrative.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_split_narrative.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.052Z"
+      }
+    },
+    "about_block_4": {
+      "title": "Newsletter Capture",
+      "category": "Callout & Lead Capture",
+      "classification": "shared",
+      "targetSchema": "layout_newsletter_capture",
+      "canonicalBasename": "newsletter-banner",
+      "coordinates": {
+        "x": 0,
+        "y": 85,
+        "width": 100,
+        "height": 15
+      },
+      "figmaNodeId": "27309:826",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "headline",
+        "subheadline",
+        "form_action_url"
+      ],
+      "notes": "Email subscription section.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/shared/newsletter-banner.html",
+        "phpTemplate": "dist-client/template-parts/blocks/shared/newsletter-banner.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_newsletter.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.052Z"
+      }
+    }
+  }
+}

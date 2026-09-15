@@ -32,7 +32,7 @@ function escapeAttr(str) {
 }
 
 // Retrieve metadata for a block from vision JSON
-function getBlockMetadata(blockFileName, pageSlug) {
+function getLegacyBlockMetadata(blockFileName, pageSlug) {
   const baseName = blockFileName.replace(/\.(php|html)$/, "");
   
   // 1. Determine local file path
@@ -112,6 +112,47 @@ function getBlockMetadata(blockFileName, pageSlug) {
     notes,
     keyFields
   };
+}
+
+// Manifest-driven block metadata resolution
+function getBlockMetadata(blockFileName, pageSlug) {
+  const manifestPath = path.join(visionDir, `${pageSlug}.manifest.json`);
+
+  // If manifest not yet built, fall through to legacy fuzzy method
+  if (!fs.existsSync(manifestPath)) return getLegacyBlockMetadata(blockFileName, pageSlug);
+
+  try {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
+    const baseName = blockFileName.replace(/\.(php|html)$/, "");
+
+    // Deterministic lookup: find block whose artifact path or canonicalBasename matches baseName
+    const entry = Object.entries(manifest.blocks || {}).find(([, block]) => {
+      if (block.canonicalBasename === baseName) return true;
+      return Object.values(block.artifacts || {}).some(p =>
+        p && path.basename(p, path.extname(p)) === baseName
+      );
+    });
+
+    if (!entry) return getLegacyBlockMetadata(blockFileName, pageSlug);
+
+    const [blockId, block] = entry;
+    const coordsStr = block.coordinates
+      ? `x: ${block.coordinates.x}%, y: ${block.coordinates.y}%, w: ${block.coordinates.width}%, h: ${block.coordinates.height}%`
+      : "Dynamic / Responsive";
+
+    return {
+      blockId,
+      componentName: block.title,
+      filePath: block.artifacts?.htmlBlock || block.artifacts?.phpTemplate || `dist-preview/blocks/${block.classification}/${baseName}.html`,
+      referenceImage: manifest.sourceImage,
+      coords: coordsStr,
+      figmaNode: block.figmaNodeId ? `${block.figmaNodeId} (${block.figmaNodeName || 'Layer'})` : "N/A",
+      notes: block.notes || "",
+      keyFields: Array.isArray(block.keyFields) ? block.keyFields.join(", ") : ""
+    };
+  } catch (e) {
+    return getLegacyBlockMetadata(blockFileName, pageSlug);
+  }
 }
 
 // Convert block (HTML fragment or PHP template part) to clean client preview HTML with Inspector wrapper

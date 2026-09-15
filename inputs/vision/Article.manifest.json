@@ -1,0 +1,159 @@
+{
+  "slug": "Article",
+  "version": 2,
+  "sourceImage": "inputs/vision/Article.png",
+  "sourceSpec": "inputs/vision/Article.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.055Z",
+  "summary": {
+    "totalBlocks": 4,
+    "sharedBlocks": 0,
+    "uniqueBlocks": 4,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "article_block_1": {
+      "title": "Article Header & Featured Image",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "single_article_header",
+      "canonicalBasename": "article-prose",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 30
+      },
+      "figmaNodeId": "27309:840",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "category_badge",
+        "title",
+        "published_date",
+        "author",
+        "featured_image"
+      ],
+      "notes": "Tag 'ROUTINES', Title 'Tips for a natural skincare routine', Date 'October 14, 2025', Author 'Dr. Elena Vance'.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/article-prose.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/article-prose.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_article_prose.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.054Z"
+      }
+    },
+    "article_block_2": {
+      "title": "Editorial Rich Text Content & Pull Quotes",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "single_article_body",
+      "canonicalBasename": "article-prose",
+      "coordinates": {
+        "x": 0,
+        "y": 30,
+        "width": 100,
+        "height": 40
+      },
+      "figmaNodeId": "27309:840",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "content_body",
+        "pull_quote",
+        "key_takeaways"
+      ],
+      "notes": "Clean editorial typography with 65ch readable measure and styled quotes.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/article-prose.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/article-prose.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_article_prose.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.054Z"
+      }
+    },
+    "article_block_3": {
+      "title": "Featured Product In-Article Callout",
+      "category": "Callout & Lead Capture",
+      "classification": "unique",
+      "targetSchema": "article_product_callout",
+      "canonicalBasename": "cross-sell-shelf",
+      "coordinates": {
+        "x": 0,
+        "y": 70,
+        "width": 100,
+        "height": 15
+      },
+      "figmaNodeId": "27309:840",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "product_id",
+        "custom_cta"
+      ],
+      "notes": "Floating product showcase for 'Pure Solution Essence' ($49.99).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/cross-sell-shelf.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/cross-sell-shelf.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_cross_sell_shelf.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.055Z"
+      }
+    },
+    "article_block_4": {
+      "title": "Related Articles Grid",
+      "category": "Blog / Post Query Grid",
+      "classification": "unique",
+      "targetSchema": "related_articles_query",
+      "canonicalBasename": "journal-grid",
+      "coordinates": {
+        "x": 0,
+        "y": 85,
+        "width": 100,
+        "height": 15
+      },
+      "figmaNodeId": "27309:840",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "related_posts_query"
+      ],
+      "notes": "3-column grid of related posts.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/journal-grid.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/journal-grid.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_journal_grid.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.055Z"
+      }
+    }
+  }
+}

@@ -33,6 +33,13 @@ When invoked for a section (e.g. `hero-editorial`, `product-carousel`, `promo-sp
    - Run `node scripts/figma-dump.mjs deep-search "<section-title> <notes> <keyFields>" --top=3`.
    - Use the retrieved AST node's colors, typography, dimensions, and assets to configure matching Liquid schema default settings and Tailwind classes.
 
+4. **Deterministic Section Handle Naming Convention**:
+   - Section filenames must strictly match the canonical basename derived from `targetSchema`:
+     - Strip `layout_` / `global_` prefixes
+     - Replace `_` with `-`
+     - Strip noise suffixes (`_grid`, `_feed`, `_options`, `_repeater`, `_table`, `_form`, `_shelf`)
+   - Output path: `dist-client/sections/[canonicalBasename].liquid`
+
 ---
 
 ## 2. Liquid Section Blueprint Template

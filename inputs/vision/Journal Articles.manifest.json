@@ -1,0 +1,158 @@
+{
+  "slug": "Journal Articles",
+  "version": 2,
+  "sourceImage": "inputs/vision/Journal Articles.png",
+  "sourceSpec": "inputs/vision/Journal Articles.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.065Z",
+  "summary": {
+    "totalBlocks": 4,
+    "sharedBlocks": 1,
+    "uniqueBlocks": 3,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "journal_block_1": {
+      "title": "Journal Header & Category Filter Tabs",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "journal_header_tabs",
+      "canonicalBasename": "journal-grid",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 15
+      },
+      "figmaNodeId": "27309:838",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "title",
+        "categories"
+      ],
+      "notes": "Header 'Journal' with category filter pills (All, Routines, Science, Ingredients, Lifestyle).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/journal-grid.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/journal-grid.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_journal_grid.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.065Z"
+      }
+    },
+    "journal_block_2": {
+      "title": "Featured Hero Article",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "journal_featured_hero",
+      "canonicalBasename": "journal-grid",
+      "coordinates": {
+        "x": 0,
+        "y": 15,
+        "width": 100,
+        "height": 35
+      },
+      "figmaNodeId": "27309:838",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "featured_post_id",
+        "read_time",
+        "cta_text"
+      ],
+      "notes": "Large hero article card with full-bleed image and headline 'Tips for a natural skincare routine'.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/journal-grid.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/journal-grid.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_journal_grid.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.065Z"
+      }
+    },
+    "journal_block_3": {
+      "title": "Articles Grid Loop",
+      "category": "Blog / Post Query Grid",
+      "classification": "unique",
+      "targetSchema": "journal_posts_grid",
+      "canonicalBasename": "journal-grid",
+      "coordinates": {
+        "x": 0,
+        "y": 50,
+        "width": 100,
+        "height": 35
+      },
+      "figmaNodeId": "27309:838",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "posts_per_page",
+        "pagination",
+        "tags_display"
+      ],
+      "notes": "3-column grid of posts: 'Science behind effective face masks', 'Ingredients for glowing skin explained', etc.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/journal-grid.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/journal-grid.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_journal_grid.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.065Z"
+      }
+    },
+    "journal_block_4": {
+      "title": "Newsletter Subscription",
+      "category": "Callout & Lead Capture",
+      "classification": "shared",
+      "targetSchema": "layout_newsletter_capture",
+      "canonicalBasename": "newsletter-banner",
+      "coordinates": {
+        "x": 0,
+        "y": 85,
+        "width": 100,
+        "height": 15
+      },
+      "figmaNodeId": "27309:838",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "headline",
+        "form_action_url"
+      ],
+      "notes": "Email capture block.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/shared/newsletter-banner.html",
+        "phpTemplate": "dist-client/template-parts/blocks/shared/newsletter-banner.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_newsletter.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.065Z"
+      }
+    }
+  }
+}

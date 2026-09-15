@@ -51,6 +51,15 @@ Your mission is to compile approved visual layouts (HTML + Tailwind) and vision 
 - Rich text must be sanitized with `wp_kses_post()`.
 - Always verify `defined('ABSPATH') || exit;` at the top of every PHP template file.
 
+### Rule 5: Deterministic Filename Naming Convention Contract
+All template part filenames must be derived deterministically from the block's `targetSchema` in `inputs/vision/[slug].json` (or `[slug].manifest.json`):
+- Strip `layout_` / `global_` prefixes
+- Replace `_` with `-`
+- Strip trailing noise suffixes (`_grid`, `_feed`, `_options`, `_repeater`, `_table`, `_form`, `_shelf`)
+- Shared components: `template-parts/blocks/shared/[canonicalBasename].php`
+- Unique components: `template-parts/blocks/unique/[canonicalBasename].php`
+- Companion ACF JSON: `dist-client/acf-json/group_[canonicalBasename].json`
+
 ---
 
 ## 2. Universal Helper Abstraction Layer (`inc/field-helpers.php`)

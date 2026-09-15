@@ -15,8 +15,9 @@ flowchart TD
     M3["Phase 3: The Dynamic PHP & Multi-Tier Licensing Shift\n(Zero-Inline-Code & Free ACF/SCF Fallbacks)"]
     M4["Phase 4: Direct AI Semantic Authoring vs. Script Generation\n(Shifting Intelligence from Scripts to Agent Skills)"]
     M5["Phase 5: Clean Client Export & Git Boundary Governance\n(Zero-Residue Delivery & Repo Rebinding)"]
+    M6["Phase 6: AST Grounding, The Shallow DOM Fallacy & Closed-Loop Vision Verification\n(Eliminating Ungrounded AI Heuristics & Fake Image Drift)"]
 
-    M1 --> M2 --> M3 --> M4 --> M5
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6
 ```
 
 ---
@@ -81,6 +82,25 @@ flowchart TD
     - `dist-client/`
     - `inputs/vision/*.png`
   - **Clean Orphan Reconstitution**: Rebuilt `main` as a clean, lightweight commit and pushed it successfully to GitHub.
+
+---
+
+### Phase 6: AST Grounding, The Shallow DOM Fallacy & Closed-Loop Vision Verification
+- **The Challenge (The Visual Drift Incident)**:
+  - Inspection of the *Hero Editorial Banner* (`hero-editorial.html` / `hero-editorial.php`) revealed severe visual and structural discrepancies:
+    1. **Layout & Positioning Drift**: The design placed all content in the bottom-left corner (`primaryAxisAlignItems: MAX`, `pb-14`). The AI generated it vertically centered (`items-center py-20`) based on generic pre-trained LLM conventions.
+    2. **Component Style Drift**: The Figma AST defined a frosted glassmorphism CTA (`BACKGROUND_BLUR` 52px, `rgba(255,255,255,0.16)` fill, white text). The AI generated a solid off-white button with black text and borders.
+    3. **Simulated Placeholder Imagery**: The design featured dark, dramatic shadow-play photography of a hand holding the *Pure Solution Essence* carton. The AI substituted an unrelated public Unsplash photo of orange cream jars.
+  - **Why the Quality Gates Failed to Catch It**:
+    1. **The "DOM Health Check" Illusion**: The old `validate-html-vision.mjs` claimed "95% Fidelity" solely by counting HTML tags (`h1`, `button`) and verifying images returned HTTP 200. Because Unsplash dummy images loaded without error, the script awarded maximum points without ever inspecting pixels or layout.
+    2. **Open-Loop Verification**: The newer block verification tool (`verify-blocks.mjs`) cropped the mockup and rendered Playwright screenshots, but stopped at `QUEUED` without an automated evaluation runner. An earlier manual report recorded an overly lenient 82% (WARN) with `"layoutMatch": "exact"`, allowing the bug to slip by.
+    3. **The Chromium Sandbox Penalty**: When Playwright loaded blocks as in-memory HTML fragments (`about:blank`), Chromium's security sandbox blocked local `file://` and relative `assets/...` paths. Previous generation attempts were forced to use remote Unsplash URLs to avoid broken image icons.
+- **Historical Decisions & Architectural Shifts**:
+  - **Strict AST-First Grounding**: AI code-generation skills (`wordpress-php-architect`, `shopify-liquid-architect`, `nextjs-tailwind-architect`) are strictly forbidden from authoring code based on unstructured text notes alone. They must query the raw Figma AST node (`scripts/figma-dump.mjs dump-raw <node_id>`) for `primaryAxisAlignItems`, `itemSpacing`, `fills`, and `effects`.
+  - **Zero-Unchecked-Placeholders Standard**: Explicitly prohibited substituting generic Unsplash images when authentic design photography exists or can be extracted/generated to match Figma references.
+  - **Headless Local Asset Inlining**: Updated `verify-blocks.mjs` to auto-inline local `assets/...` into base64 data URIs during Playwright rendering, guaranteeing zero broken images in headless Chromium sandboxes.
+  - **Deprecation of Shallow DOM Scoring**: Shifted all visual quality verification away from DOM tag counting to **Block-Level Vision Verification** across 5 strict dimensions (Layout Structure, Typography Scale, Copy Accuracy, Color/Mood Match, and UI Completeness) with strict thresholds (PASS ≥ 85, WARN 70–84, FAIL < 70).
+
 
 ---
 

@@ -1,0 +1,195 @@
+{
+  "slug": "product List page",
+  "version": 2,
+  "sourceImage": "inputs/vision/product List page.png",
+  "sourceSpec": "inputs/vision/product List page.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.069Z",
+  "summary": {
+    "totalBlocks": 5,
+    "sharedBlocks": 2,
+    "uniqueBlocks": 3,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "plp_block_1": {
+      "title": "PLP Header & Filter Count",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "plp_archive_header",
+      "canonicalBasename": "plp-faceted-catalog",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 8
+      },
+      "figmaNodeId": "27309:768",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "archive_title",
+        "active_filter_count"
+      ],
+      "notes": "Page heading 'All products' with active filter counter badge.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/plp-faceted-catalog.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/plp-faceted-catalog.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_plp_filters.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.069Z"
+      }
+    },
+    "plp_block_2": {
+      "title": "Faceted Taxonomy Filter Sidebar",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "plp_filter_sidebar",
+      "canonicalBasename": "plp-filter-sidebar",
+      "coordinates": {
+        "x": 0,
+        "y": 8,
+        "width": 25,
+        "height": 60
+      },
+      "figmaNodeId": "27309:768",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "ingredients_taxonomy",
+        "type_taxonomy",
+        "price_ranges",
+        "size_options"
+      ],
+      "notes": "Sticky left sidebar with expandable taxonomy groups: INGREDIENTS (Hyaluronic acid, Botanical extracts, Glycerin, Caffeine, Peptides, Vitamin E), TYPE (Cream, Lotion, Serum, Oil, Cleanser), PRICE (Under $50, $100-$150, Above $200), SIZE (50 ml, 100 ml, 150 ml, 200 ml, 250 ml).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/plp-filter-sidebar.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/plp-filter-sidebar.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_plp_filters.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.069Z"
+      }
+    },
+    "plp_block_3": {
+      "title": "Product Grid Catalog Shelf",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "plp_product_query_loop",
+      "canonicalBasename": "plp-product-grid",
+      "coordinates": {
+        "x": 25,
+        "y": 8,
+        "width": 75,
+        "height": 60
+      },
+      "figmaNodeId": "27309:768",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "product_cpt_query",
+        "pagination",
+        "badge_logic"
+      ],
+      "notes": "3-column grid displaying product cards: Body Wash ($49.99), Body Serum ($49.99 with New badge), Face Mask ($49.99), Face Toner ($47.99 with -20% badge and $59.99 compare price).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/plp-product-grid.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/plp-product-grid.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_plp_product_grid.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.069Z"
+      }
+    },
+    "plp_block_4": {
+      "title": "Instagram Social UGC Showcase",
+      "category": "Service Showcase",
+      "classification": "shared",
+      "targetSchema": "layout_instagram_feed",
+      "canonicalBasename": "instagram-gallery",
+      "coordinates": {
+        "x": 0,
+        "y": 68,
+        "width": 100,
+        "height": 16
+      },
+      "figmaNodeId": "27309:768",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "instagram_handle",
+        "gallery_images"
+      ],
+      "notes": "5-column square grid of close-up skin textures, natural botanicals, facial application, and product swatches with '@Skin—Clinic' branding.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/shared/instagram-gallery.html",
+        "phpTemplate": "dist-client/template-parts/blocks/shared/instagram-gallery.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_instagram_gallery.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.069Z"
+      }
+    },
+    "plp_block_5": {
+      "title": "Newsletter Lead Capture Banner",
+      "category": "Callout & Lead Capture",
+      "classification": "shared",
+      "targetSchema": "layout_newsletter_capture",
+      "canonicalBasename": "newsletter-banner",
+      "coordinates": {
+        "x": 0,
+        "y": 84,
+        "width": 100,
+        "height": 16
+      },
+      "figmaNodeId": "27309:768",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "headline",
+        "subheadline",
+        "form_action_url"
+      ],
+      "notes": "Full-bleed background image with centered text 'Subscribe for exclusive deals' and email capture field.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/shared/newsletter-banner.html",
+        "phpTemplate": "dist-client/template-parts/blocks/shared/newsletter-banner.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_newsletter.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.069Z"
+      }
+    }
+  }
+}

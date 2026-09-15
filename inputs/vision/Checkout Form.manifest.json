@@ -1,0 +1,126 @@
+{
+  "slug": "Checkout Form",
+  "version": 2,
+  "sourceImage": "inputs/vision/Checkout Form.png",
+  "sourceSpec": "inputs/vision/Checkout Form.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.059Z",
+  "summary": {
+    "totalBlocks": 3,
+    "sharedBlocks": 0,
+    "uniqueBlocks": 3,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "chk_block_1": {
+      "title": "Express Payment & Contact Capture",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "checkout_express_pay",
+      "canonicalBasename": "checkout-flow",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 60,
+        "height": 30
+      },
+      "figmaNodeId": "27309:812",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "shop_pay_enabled",
+        "apple_pay_enabled",
+        "email_input"
+      ],
+      "notes": "Express checkout buttons with email input.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/checkout-flow.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/checkout-flow.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_checkout_flow.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.059Z"
+      }
+    },
+    "chk_block_2": {
+      "title": "Shipping & Payment Details Form",
+      "category": "Callout & Lead Capture",
+      "classification": "unique",
+      "targetSchema": "checkout_form_fields",
+      "canonicalBasename": "checkout-flow",
+      "coordinates": {
+        "x": 0,
+        "y": 30,
+        "width": 60,
+        "height": 70
+      },
+      "figmaNodeId": "27309:812",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "shipping_address_fields",
+        "shipping_methods",
+        "payment_gateways"
+      ],
+      "notes": "First/Last Name, Address, Apartment, City, State, ZIP, Phone, Credit Card inputs.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/checkout-flow.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/checkout-flow.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_checkout_flow.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.059Z"
+      }
+    },
+    "chk_block_3": {
+      "title": "Collapsible Order Summary Sidebar",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "checkout_sidebar_summary",
+      "canonicalBasename": "checkout-flow",
+      "coordinates": {
+        "x": 60,
+        "y": 0,
+        "width": 40,
+        "height": 100
+      },
+      "figmaNodeId": "27309:812",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "cart_items",
+        "discount_code_input",
+        "subtotal",
+        "shipping_cost",
+        "total"
+      ],
+      "notes": "Right sticky panel with item thumbnails, quantities, line totals, promo code input, and final total ($107.98).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/checkout-flow.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/checkout-flow.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_checkout_flow.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.059Z"
+      }
+    }
+  }
+}

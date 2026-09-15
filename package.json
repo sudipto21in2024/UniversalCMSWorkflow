@@ -29,6 +29,12 @@
     "client:generate": "node engine/scripts/generate-target-code.mjs",
     "preview:html": "node scripts/assemble-preview.mjs",
     "validate:vision": "node scripts/validate-html-vision.mjs",
+    "manifest:build": "node scripts/build-manifest.mjs",
+    "manifest:build:all": "node scripts/build-manifest.mjs --all",
+    "verify:blocks": "node scripts/verify-blocks.mjs",
+    "verify:blocks:all": "node scripts/verify-blocks.mjs --all",
+    "verify:cleanup": "node scripts/cleanup-verify-tmp.mjs",
+    "pipeline:full": "npm run manifest:build:all && npm run preview:html && npm run verify:blocks:all && npm run lint:tokens",
     "annotator": "node tools/visual-annotator/server.mjs --input ./inputs/vision --output ./inputs/vision --port 4040",
     "annotator:studio": "node tools/visual-annotator/server.mjs --input ./tools/visual-annotator/inputs --output ./tools/visual-annotator/inputs --port 4040"
   },

@@ -1,116 +1,221 @@
 # 🏛️ Universal CMS Workflow & Agency Studio
 
-A high-velocity, multi-client engineering framework for converting visual UI designs (Figma AST dumps and annotated screenshots) into production code across **any client-requested target architecture** (Shopify Native Liquid, WordPress Classic PHP, Headless Next.js, or Sitecore).
+A production-grade, multi-client engineering framework for converting visual UI designs (Figma AST dumps and annotated screenshots) into production-ready code across **any client-requested target architecture** (Shopify Native Liquid, WordPress Classic PHP, Headless Next.js, or Sitecore).
 
 ---
 
 ## 🌟 Core Architectural Philosophy
 
-1. **Single-Target Project Lifecycle**: Exactly **one target platform** is locked per client engagement. We never mix or output multiple CMSs for a single project.
-2. **Figma JSON as Primary Ground Truth**: Exact colors, typography scales, vectors, and spacing tokens are rooted directly in offline Figma AST JSON dumps (`Docs/DirectDataDump/`).
-3. **Human-in-the-Loop Node Grounding**: The AI vision subagent slices layouts and models data schemas, leaving the `Figma Node ID` blank for the human admin to ground any complex or ambiguous layers.
-4. **Visual Approval Gate**: Stakeholders review responsive layouts, spacing, and colors in pure, static HTML5 + Tailwind CSS (`dist-preview/[slug].html`) *before* backend templates or CMS bindings are generated.
-5. **Zero-Residue Delivery & Reset**: Deliver clean, standalone client code (`npm run export:client`), then scrub all client artifacts back to a pristine starter baseline (`npm run reset:workspace`).
+1. **Single-Target Project Lifecycle**: Exactly **one target platform** is locked per client engagement in `.workflow-state.json`. We never produce multi-CMS hybrid spaghetti.
+2. **Figma JSON as Primary Ground Truth**: Exact colors, typography scales, vectors, dimensions, and layout alignments are rooted directly in offline Figma AST JSON dumps (`Docs/DirectDataDump/`).
+3. **AST-First Grounding (Anti-Hallucination)**: Specialized AI subagents must query exact Figma AST node parameters (`scripts/figma-dump.mjs dump-raw <node_id>`) for `primaryAxisAlignItems`, `itemSpacing`, fills, and blur effects before generating code, strictly prohibiting generic heuristics or fake image placeholders.
+4. **Decoupled Modular Block Architecture**: Pages are never generated as monolithic templates. Every screen is decomposed into **Shared (Reusable)** and **Unique (Page-Specific)** modular blocks following a strict **Deterministic Basename Contract**.
+5. **Visual Approval Gate**: Stakeholders review responsive layouts, spacing, and typography in pure, standalone HTML5 + Tailwind CSS previews (`dist-preview/[slug].html`) with an interactive Component Vision Inspector *before* CMS backend code is finalized.
+6. **Closed-Loop Block Vision AI Verification**: Headless Playwright captures 1440px renders of implemented blocks, crops corresponding design regions from source PNGs, and evaluates visual parity across 5 objective dimensions (Layout, Typography, Copy, Color/Mood, and UI Completeness).
+7. **Multi-Tier CMS Licensing Resilience**: Generated WordPress themes implement universal accessor fallbacks (`app_get_field()`, `app_get_repeater_rows()`) that render 100% complete out-of-the-box on Free ACF, Secure Custom Fields (SCF), OpenFields, or ACF Pro.
+8. **Zero-Residue Delivery & Reset**: Deliver clean, standalone client code (`npm run export:client`), then scrub all client artifacts back to a pristine starter baseline (`npm run reset:workspace`).
 
 ---
 
-## 🔄 The 4-Step Single-Target Lifecycle
+## 🔄 The End-to-End Workflow Pipeline
 
 ```mermaid
 flowchart TD
-    Step0["STEP 0: Project Genesis (Target Platform Lock)\nnpm run client:init <name> --target=shopify-liquid"]
+    S0["STEP 0: Project Genesis\nnpm run client:init <name> --target=wordpress-php"]
     
-    Step0 --> Step1["STEP 1: Target-Aware Vision Slicing & Modeling\nAnnotator sets CMS preset (Metaobjects, ACF Fields, Razor)\nAI leaves Figma Node Map blank for admin inspection"]
+    S1["STEP 1: Visual Annotation & Modeling\n• Launch Studio: npm run annotator\n• Annotate boxes in inputs/vision/[slug].png + [slug].json\n• Build manifest: npm run manifest:build:all"]
     
-    Step1 --> Step2["STEP 2: Visual Approval Gate (Pure HTML + Tailwind)\nnpm run preview:html\nStakeholders review in browser with ZERO framework dependencies"]
+    S2["STEP 2: AST Grounding & Code Synthesis\n• Query AST: node scripts/figma-dump.mjs dump-raw <node_id>\n• Synthesize shared & unique blocks into dist-preview/blocks/"]
     
-    Step2 --> Step3["STEP 3: Native Target Code Generation\nSpecialized subagent outputs native code:\n• Shopify: shopify-liquid-architect (.liquid sections)\n• WordPress: wordpress-php-architect (.php template parts)\n• Next.js: nextjs-tailwind-architect (.tsx Server Components)"]
+    S3["STEP 3: Preview Assembly & Visual Approval\n• Dynamic compilation: npm run preview:html\n• Stakeholders review dist-preview/[slug].html\n• Click Inspector Badges to copy block context"]
     
-    Step3 --> Step4["DELIVERY & RESET\n• Export: npm run export:client (or export:client:zip)\n• Reset: npm run reset:workspace (returns to pristine core)"]
+    S4["STEP 4: Block Vision AI Verification Gate\n• Run verification: npm run verify:blocks:all\n• Playwright 1440px renders + Figma crops\n• 5-Dimension AI evaluation: PASS >= 85%"]
+    
+    S5["STEP 5: Target CMS Code Synthesis\n• Synthesize PHP/Liquid templates into dist-client/\n• Export companion ACF JSON schemas to dist-client/acf-json/"]
+    
+    S6["STEP 6: Export & Workspace Reset\n• Package client code: npm run export:client\n• Reset workspace: npm run reset:workspace"]
+
+    S0 --> S1 --> S2 --> S3 --> S4 --> S5 --> S6
 ```
 
 ---
 
-## 🚀 Quick Start & CLI Workflows
+## 🛠️ Step-by-Step Operating Guide
 
-### 1. Initialize a New Client Project (Step 0)
-Locks the target architecture into `.workflow-state.json` and auto-configures the Visual Annotator studio preset:
+### 1. Initialize Client Engagement (Step 0)
+Locks the target CMS platform and sets up directory structure:
 
 ```bash
-# Interactive Mode:
+# Interactive setup:
 npm run client:init
 
-# Flagged Mode:
-npm run client:init skin-clinic --target=shopify-liquid --name="Skin Clinic Luxury DTC"
+# Or direct flags:
+npm run client:init skin-clinic --target=wordpress-php --name="Skin Clinic Luxury DTC"
 ```
 
 Available Target Platforms:
-- `shopify-liquid`: Native Shopify Liquid theme sections (`.liquid` + `{% schema %}`)
-- `shopify-headless`: Headless Shopify with React 19 / Next.js 15 App Router & GraphQL
-- `wordpress-php`: Classic WordPress PHP template parts + ACF Pro field groups
-- `contentful-headless`: Headless Next.js 15 with Contentful GraphQL & migrations
-- `sitecore-razor`: Sitecore .NET C# Helix models with Razor `.cshtml` views
-- `nextjs-standalone`: Standard Next.js 15 + Tailwind CSS app
+- `wordpress-php`: Classic WordPress theme with PHP template parts + ACF Pro / Free SCF companion schemas.
+- `shopify-liquid`: Native Shopify Liquid theme sections (`.liquid` + `{% schema %}` JSON blocks).
+- `shopify-headless`: Headless Shopify with Next.js 15 App Router + GraphQL Storefront queries.
+- `contentful-headless`: Headless Next.js 15 with Contentful migrations and GraphQL bindings.
+- `sitecore-razor`: Sitecore .NET C# Helix models with Razor `.cshtml` views.
+- `nextjs-standalone`: Standard Next.js 15 + Tailwind CSS application.
 
 ---
 
-### 2. Annotate Layouts & Ground Figma Nodes (Step 1)
-Launch the Visual Block Annotator Studio on `http://localhost:4040`:
+### 2. Visual Annotation Studio & Manifest Building (Step 1)
+Launch the zero-dependency Visual Block Annotator Studio:
 
 ```bash
 npm run annotator
-# Or double-click: start-annotator.bat
+# Running on http://localhost:4040
 ```
-- Drop mockup images into `inputs/vision/[slug].png`.
-- Visual slices are saved to `inputs/vision/[slug].json`.
-- **Figma Grounding**: Fill in the optional `Figma Node ID` in the block inspector card for any ambiguous or deeply nested elements.
-- **Category "Other" & Deep-Search**:
-  - For bespoke or unmapped sections, select Category: `"Other / Custom Section (Deep-Search)"`.
-  - In `Requirements & Notes`, describe what the component looks like (e.g. headlines, prices, badges, and button copy).
-  - During code generation, the AI agent automatically runs `node scripts/figma-dump.mjs deep-search "<description>"` to find the matching Figma AST node, dimensions, dominant colors, and font styles.
+
+1. Drop page mockup screenshots into `inputs/vision/[slug].png`.
+2. Draw bounding boxes around components.
+3. Select platform-specific taxonomy presets (e.g. Flexible Content Layout, Repeater, Custom Post Type, Options).
+4. For custom or unmapped sections, select `"Other / Custom Section (Deep-Search)"` and provide descriptive copy strings, card structures, and candidate fields in notes.
+5. Slices and requirements are saved to `inputs/vision/[slug].json`.
+6. Compile deterministic mapping manifests:
+   ```bash
+   npm run manifest:build:all
+   ```
+   This generates `inputs/vision/[slug].manifest.json` indexing all blocks with canonical basenames and artifact paths.
 
 ---
 
-### 3. Generate HTML Visual Approval Preview (Step 2)
-Compile pure, standalone HTML5 + Tailwind CSS previews into `dist-preview/[slug].html`:
+### 3. AST Grounding & Design Token Extraction (Step 2)
+Before writing any code, query the offline Figma AST dump (`Docs/DirectDataDump/`):
+
+```bash
+# Deep semantic search from vision notes:
+node scripts/figma-dump.mjs deep-search "Pure Solution Essence hero banner" --top=3
+
+# Inspect raw AST geometry, fills, blurs, and typography:
+node scripts/figma-dump.mjs dump-raw 27309:223
+
+# Extract typography scale frequencies:
+node scripts/figma-dump.mjs extract-typography 27309:223
+
+# Extract color frequencies:
+node scripts/figma-dump.mjs extract-colors 27309:223
+```
+
+#### Grounding Rules:
+- **Never guess alignment**: Inspect `primaryAxisAlignItems` (`MAX` = bottom-pinned, `CENTER` = centered, `MIN` = top-pinned).
+- **Never guess buttons**: Inspect `effects` for `BACKGROUND_BLUR` and exact opacity fills (e.g. `rgba(255, 255, 255, 0.16)`).
+- **Never use random placeholders**: Match image hashes to `Docs/figma-data/asset-manifest.json` or local dump assets in `Docs/DirectDataDump/`.
+
+---
+
+### 4. Deterministic Basename Naming Convention Contract
+
+All AI architect skills and human contributors must strictly follow the deterministic derivation rule:
+
+| `targetSchema` in Vision JSON | Canonical Basename | Shared / Unique | Output Files |
+| :--- | :--- | :--- | :--- |
+| `global_header_options` | `header-nav` | Shared | `header-nav.html`, `header-nav.php`, `group_global_options.json` |
+| `layout_hero_editorial` | `hero-editorial` | Unique | `hero-editorial.html`, `hero-editorial.php`, `group_hero_editorial.json` |
+| `layout_product_query_grid` | `best-sellers-shelf` | Unique | `best-sellers-shelf.html`, `best-sellers-shelf.php`, `group_best_sellers.json` |
+| `layout_category_tiles` | `category-spotlight` | Unique | `category-spotlight.html`, `category-spotlight.php`, `group_category_spotlight.json` |
+| `layout_split_narrative` | `sheet-mask-feature` | Unique | `sheet-mask-feature.html`, `sheet-mask-feature.php`, `group_split_narrative.json` |
+| `layout_testimonials_repeater` | `testimonials-slider` | Unique | `testimonials-slider.html`, `testimonials-slider.php`, `group_testimonials.json` |
+| `layout_instagram_feed` | `instagram-gallery` | Shared | `instagram-gallery.html`, `instagram-gallery.php`, `group_instagram.json` |
+| `layout_newsletter_capture` | `newsletter-banner` | Shared | `newsletter-banner.html`, `newsletter-banner.php`, `group_newsletter.json` |
+| `global_footer_options` | `footer-global` | Shared | `footer-global.html`, `footer-global.php`, `group_footer.json` |
+
+---
+
+### 5. Universal Dynamic Assembler & Component Inspector (Step 3)
+Compile pure, standalone HTML5 + Tailwind CSS previews:
 
 ```bash
 npm run preview:html
-# Or for a specific screen:
-npm run preview:html -- --slug=Homepage
 ```
-Open `dist-preview/Homepage.html` in any browser to verify responsive layouts, typography, and spacing with zero CMS dependencies.
+
+- Compiles all screens dynamically from `dist-preview/blocks/shared/` and `dist-preview/blocks/unique/` into `dist-preview/[slug].html`.
+- **Interactive Component Inspector**: Every section is wrapped in an interactive container with a top-right floating badge.
+- Clicking any badge copies a structured AI vision prompt directly to your clipboard containing:
+  - Component name & file path
+  - Source mockup image path & bounding coordinates (`x, y, w, h`)
+  - Figma Node ID
+  - Expected copy strings and field requirements
 
 ---
 
-### 4. Native Target Code Generation (Step 3 - Final Step)
-Once the HTML preview is reviewed and approved by stakeholders, synthesize the native target code for the locked CMS platform (e.g. WordPress Classic PHP Theme + ACF Pro field groups, or Shopify Liquid sections):
+### 6. Block-Level Vision AI Verification Gate (Step 4)
+Run automated pixel-level block verification:
 
 ```bash
-# Generate native target code into dist-client/:
-npm run client:generate
+# Verify a single block:
+node scripts/verify-blocks.mjs --slug=Homepage --block=block_2
+
+# Verify an entire page:
+node scripts/verify-blocks.mjs --slug=Homepage
+
+# Verify all blocks across all screens:
+npm run verify:blocks:all
+
+# Clean up runtime temp files:
+npm run verify:cleanup
 ```
-- **WordPress PHP**: Outputs `style.css`, `functions.php`, `index.php`, `header.php`, `footer.php`, `template-parts/blocks/shared/*.php`, `template-parts/blocks/unique/*.php`, and `acf-json/*.json`.
-- **Shopify Liquid**: Outputs `.liquid` sections and customizer `{% schema %}` JSON blocks.
-- **Headless Next.js**: Outputs App Router components with Tailwind CSS & Radix UI.
+
+#### How Block Verification Works:
+1. **Layer 1 (Source of Truth)**: Full-page mockups (`inputs/vision/[slug].png`) are never modified permanently.
+2. **Layer 2 (Runtime Temp Execution)**:
+   - Playwright renders the HTML block at a 1440px viewport (`dist-preview/.tmp/renders/`).
+   - Local `assets/...` are automatically inlined to base64 data URIs so Chromium's headless sandbox never produces broken images.
+   - `pngjs` crops the corresponding design region from the source mockup (`dist-preview/.tmp/crops/`).
+3. **Layer 3 (Evaluation & Reports)**:
+   - Antigravity's native multimodal Gemini evaluates the design crop against the HTML render across 5 dimensions:
+     - **Layout Structure** (columns, alignment, proportions, spacing)
+     - **Typography Scale** (hierarchy, font size, weight, line wraps)
+     - **Copy Accuracy** (verbatim text strings from spec)
+     - **Color & Mood Match** (background tones, overlays, authentic photography)
+     - **UI Completeness** (buttons, badges, icons, accordions)
+   - Thresholds: **PASS ≥ 85%**, **WARN 70–84%**, **FAIL < 70%**.
+   - Results are written back to `inputs/vision/[slug].manifest.json` and consolidated into `dist-preview/reports/[slug]-block-verification.json`.
 
 ---
 
-### 5. Enforce Official Design Tokens (`--fix` Codemod)
+### 7. Native CMS Code Generation & Multi-Tier Licensing (Step 5)
+Synthesize production-grade CMS templates into `dist-client/`:
+
+```bash
+npm run client:generate
+```
+
+#### Multi-Tier Licensing Resilience:
+The WordPress templates in `dist-client/template-parts/blocks/` use universal helper functions (`app_get_field()` and `app_get_repeater_rows()`):
+```php
+<?php
+// 1. If ACF Pro is active -> Reads have_rows()
+// 2. If Free ACF / Secure Custom Fields (SCF) / OpenFields is active -> Reads post meta / JSON
+// 3. If fresh install (zero posts) -> Automatically falls back to built-in visual defaults
+$testimonials = app_get_repeater_rows('testimonials_items', $default_testimonials);
+?>
+```
+- **Zero Database Dependency**: The theme renders with 100% visual fidelity immediately upon activation on a fresh WordPress install.
+- **Zero Inline Code**: Complete separation of PHP controller logic from semantic presentation markup. No inline `<script>` tags, inline `<style>` tags, or SQL queries.
+- **14 Companion ACF JSON Schemas**: Auto-exported to `dist-client/acf-json/group_[basename].json`.
+
+---
+
+### 8. Design Token Governance (`--fix` Codemod)
 Strictly enforce official design tokens from `src/styles/tokens.css` and eliminate arbitrary Tailwind bracket notation:
 
 ```bash
 # Audit styling compliance:
 npm run lint:tokens
 
-# Automatically replace arbitrary brackets with official tokens and log discrepancy comments:
+# Automatically replace arbitrary brackets with official design tokens:
 npm run lint:tokens:fix
 ```
 
 ---
 
-### 6. Client Export & Zero-Residue Workspace Reset
-Package clean client code for delivery and wipe temporary client artifacts:
+### 9. Client Export & Zero-Residue Workspace Reset (Step 6)
+Package clean client deliverables and scrub the workspace back to baseline:
 
 ```bash
 # Export clean standalone client code (with asset tree-shaking):
@@ -119,22 +224,22 @@ npm run export:client
 # Export as a compressed zip archive:
 npm run export:client:zip
 
-# Scrub all client routes, modules, images, and state back to pristine core:
+# Scrub all client routes, modules, images, and preview files back to pristine starter core:
 npm run reset:workspace
 ```
 
 ---
 
-## 🤖 Specialized AI Subagents (`.agents/skills/`)
+## 🤖 Specialized AI Subagent Skills (`.agents/skills/`)
 
-| Subagent Skill | Purpose & Output |
+| Skill | Role & Output |
 | :--- | :--- |
-| **`shopify-vision-architect`** | Slices screenshots and models Shopify Metaobjects, Metafields, and Mermaid ERDs. Leaves `figmaNodeMap` blank for human entry. |
+| **`shopify-vision-architect`** | Slices screenshots and models Shopify Metaobjects, Metafields, and Mermaid ERDs. |
 | **`shopify-liquid-architect`** | Compiles approved HTML into native Shopify `.liquid` sections with customizer `{% schema %}` JSON settings into `dist-client/sections/`. |
-| **`wordpress-php-architect`** | Compiles approved HTML into WordPress `.php` template parts with ACF `get_field()` bindings into `dist-client/template-parts/`. |
+| **`wordpress-php-architect`** | Compiles approved HTML into WordPress `.php` template parts with universal field accessors and companion ACF JSON schemas into `dist-client/`. |
 | **`nextjs-tailwind-architect`** | Compiles approved HTML into React 19 / Next.js 15 App Router Server Components in `src/components/modules/`. |
 | **`universal-cms-architect`** | Compiles Contentful migrations (`.js`), Sitecore serialization items, and multi-CMS GraphQL query contracts. |
-| **`shopify-entity-architect`** | Generates automated JSON blueprints and provisions Shopify Admin Metaobjects. |
+| **`shopify-entity-architect`** | Generates automated JSON blueprints and provisions Shopify Admin Metaobjects via GraphQL. |
 
 ---
 
@@ -151,34 +256,52 @@ UniversalCMSWorkflow/
 ├── tools/visual-annotator/             # Interactive bounding-box annotator studio
 │   ├── presets/                        # Dynamic CMS taxonomy presets (Shopify, WP, Contentful, Next.js)
 │   └── public/                         # Annotator canvas & Figma grounding inputs
-├── inputs/vision/                      # Active client design screenshots & JSON slice annotations
+├── inputs/vision/                      # Active client design screenshots, JSON specs & manifests
+│   ├── [slug].png                      # Full-page high-resolution design mockup (never modified)
+│   ├── [slug].json                     # Visual bounding boxes & entity requirements
+│   └── [slug].manifest.json            # Deterministic block-to-artifact mapping index
+├── dist-preview/                       # Zero-CMS standalone HTML5 approval previews
+│   ├── blocks/shared/                  # Reusable HTML block components
+│   ├── blocks/unique/                  # Page-specific HTML block components
+│   ├── assets/                         # Local photographic and icon assets
+│   ├── reports/                        # Permanent block verification AI reports
+│   └── [slug].html                     # Dynamically assembled full-page previews
+├── dist-client/                        # Deliverable target platform codebase (WordPress, Shopify, etc.)
+│   ├── template-parts/blocks/          # Modular PHP template parts (shared/ & unique/)
+│   ├── acf-json/                       # Companion ACF field group exports (group_*.json)
+│   ├── inc/                            # Modular theme setup, field helpers, and template tags
+│   └── assets/                         # Optimized client assets
 ├── scripts/
-│   ├── audit-tokens.mjs                # Design token auditor with --fix codemod
-│   ├── render-html-preview.mjs         # Visual Approval Gate HTML+Tailwind generator
-│   └── figma-dump.mjs                  # Offline Figma AST node resolver
-├── Docs/DirectDataDump/                # Cached offline Figma JSON dumps
-├── references/cms-patterns/            # Production schemas (Shopify, Contentful, Sitecore)
-├── src/                                # Active Next.js 15 runtime sandbox
-│   ├── app/                            # Active client pages & routes
-│   ├── components/                     # Atomic UI primitives & modules
-│   └── styles/tokens.css               # Single source of truth for design tokens
+│   ├── assemble-preview.mjs            # Dynamic preview assembler with Inspector Badges
+│   ├── build-manifest.mjs              # Manifest builder (derives canonical basenames)
+│   ├── verify-blocks.mjs               # Block-level vision verification orchestrator
+│   ├── cleanup-verify-tmp.mjs          # Runtime temp directory scrubber
+│   ├── figma-dump.mjs                  # Offline Figma AST node resolver & semantic search
+│   └── audit-tokens.mjs                # Design token auditor with --fix codemod
+├── Docs/
+│   ├── DirectDataDump/                 # Cached offline Figma AST JSON dumps
+│   ├── HISTORICAL_DECISIONS_AND_CONCLUSIONS.md # Retrospective on architectural evolution & incident post-mortems
+│   └── BLOCK_VISION_VERIFICATION_PLAN.md       # Block vision verification specification
 └── package.json
 ```
 
 ---
 
-## 🛠️ Verification & Build Commands
+## 🛠️ Complete CLI Command Reference
 
-```bash
-# TypeScript verification
-npx tsc --noEmit
-
-# Production Next.js build
-npm run build
-
-# Token & Styling Compliance Audit
-npm run lint:tokens
-
-# Run Visual Annotator Studio
-npm run annotator
-```
+| Command | Purpose |
+| :--- | :--- |
+| `npm run client:init` | Initialize a new client engagement and lock target CMS platform |
+| `npm run annotator` | Launch the Visual Block Annotator Studio on `http://localhost:4040` |
+| `npm run manifest:build:all` | Build deterministic manifest indices (`[slug].manifest.json`) for all screens |
+| `npm run preview:html` | Dynamically compile all HTML preview screens with Component Inspector Badges |
+| `npm run verify:blocks -- --slug=Homepage` | Run block-level vision verification on a specific screen |
+| `npm run verify:blocks:all` | Run block-level vision verification across all screens |
+| `npm run verify:cleanup` | Scrub runtime temp crops and renders (`dist-preview/.tmp/`) |
+| `npm run client:generate` | Synthesize target CMS code and companion schemas into `dist-client/` |
+| `npm run lint:tokens` | Audit design token compliance in code |
+| `npm run lint:tokens:fix` | Auto-repair arbitrary CSS values to official design tokens |
+| `npm run export:client` | Package standalone client deliverable |
+| `npm run export:client:zip` | Package standalone client deliverable as a `.zip` archive |
+| `npm run reset:workspace` | Wipe client artifacts and reset workspace back to baseline |
+| `npm run pipeline:full` | Run end-to-end audit: manifest build, preview assemble, block verification, and token linting |

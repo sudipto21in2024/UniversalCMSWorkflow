@@ -1,0 +1,124 @@
+{
+  "slug": "Bag with Products",
+  "version": 2,
+  "sourceImage": "inputs/vision/Bag with Products.png",
+  "sourceSpec": "inputs/vision/Bag with Products.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.057Z",
+  "summary": {
+    "totalBlocks": 3,
+    "sharedBlocks": 0,
+    "uniqueBlocks": 3,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "cart_block_1": {
+      "title": "Free Shipping Progress Bar",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "cart_free_shipping_bar",
+      "canonicalBasename": "cart-table",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 10
+      },
+      "figmaNodeId": "27309:799",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "threshold_amount",
+        "current_cart_total",
+        "progress_percentage"
+      ],
+      "notes": "Bar showing '$2.01 away from free shipping' with animated green progress fill.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/cart-table.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/cart-table.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_cart_table.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.056Z"
+      }
+    },
+    "cart_block_2": {
+      "title": "Cart Line Items List",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "cart_line_items",
+      "canonicalBasename": "cart-table",
+      "coordinates": {
+        "x": 0,
+        "y": 10,
+        "width": 100,
+        "height": 60
+      },
+      "figmaNodeId": "27309:799",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "items",
+        "quantity_control",
+        "remove_item"
+      ],
+      "notes": "List of cart items: Face Toner ($47.99), Body Wash ($49.99) with image thumbnail, variant size, and quantity picker.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/cart-table.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/cart-table.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_cart_table.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.057Z"
+      }
+    },
+    "cart_block_3": {
+      "title": "Cart Order Summary & Checkout Action",
+      "category": "Callout & Lead Capture",
+      "classification": "unique",
+      "targetSchema": "cart_checkout_summary",
+      "canonicalBasename": "cart-table",
+      "coordinates": {
+        "x": 0,
+        "y": 70,
+        "width": 100,
+        "height": 30
+      },
+      "figmaNodeId": "27309:799",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "subtotal",
+        "shipping_estimate",
+        "checkout_url"
+      ],
+      "notes": "Subtotal '$97.98', Taxes/Shipping calculated at checkout, Black 'Proceed to checkout' button.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/cart-table.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/cart-table.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_cart_table.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.057Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "slug": "product Details page",
+  "version": 2,
+  "sourceImage": "inputs/vision/product Details page.png",
+  "sourceSpec": "inputs/vision/product Details page.json",
+  "targetPlatform": "wordpress-php",
+  "generatedAt": "2026-09-14T15:33:17.067Z",
+  "summary": {
+    "totalBlocks": 6,
+    "sharedBlocks": 2,
+    "uniqueBlocks": 4,
+    "unmappedBlocks": 0
+  },
+  "blocks": {
+    "pdp_block_1": {
+      "title": "Product Hero & Purchasing Buy Box",
+      "category": "Hero Section",
+      "classification": "unique",
+      "targetSchema": "single_product_buy_box",
+      "canonicalBasename": "pdp-buy-box",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 30
+      },
+      "figmaNodeId": "27309:779",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "title",
+        "category_tag",
+        "price",
+        "size_variants",
+        "quantity",
+        "add_to_cart_cta",
+        "free_shipping_notice",
+        "gallery_images"
+      ],
+      "notes": "Left: Large product bottle photography with thumbnail carousel below. Right: Category 'FACE', Title 'Pure Solution Essence', Price '$49.99', description copy, Size pills ('100 ml', '250 ml', '500 ml'), Quantity picker ('- 1 +'), Solid black 'Add to cart' CTA, 'Free shipping over $50' notice, Collapsible accordions for DETAILS, HOW TO USE, and INGREDIENTS.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/pdp-buy-box.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/pdp-buy-box.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_pdp_buy_box.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.066Z"
+      }
+    },
+    "pdp_block_2": {
+      "title": "Daily Glow Ritual Narrative Split",
+      "category": "Callout & Lead Capture",
+      "classification": "unique",
+      "targetSchema": "layout_split_ritual",
+      "canonicalBasename": "daily-ritual-split",
+      "coordinates": {
+        "x": 0,
+        "y": 30,
+        "width": 100,
+        "height": 18
+      },
+      "figmaNodeId": "27309:779",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "headline",
+        "instructions",
+        "feature_image"
+      ],
+      "notes": "50/50 split. Left: Headline 'Your daily glow ritual' and step-by-step application instructions. Right: Macro photography of fingers applying essence to dewy collarbone.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/daily-ritual-split.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/daily-ritual-split.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_daily_ritual.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.067Z"
+      }
+    },
+    "pdp_block_3": {
+      "title": "Key Active Ingredients Cards",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "layout_ingredients_repeater",
+      "canonicalBasename": "active-ingredients-cards",
+      "coordinates": {
+        "x": 0,
+        "y": 48,
+        "width": 100,
+        "height": 18
+      },
+      "figmaNodeId": "27309:779",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "ingredient_name",
+        "ingredient_image",
+        "ingredient_description"
+      ],
+      "notes": "3-column card breakdown: 1) Hyaluronic acid (petri-dish texture image), 2) Botanical extracts (water droplet image), 3) Glycerin (smooth white cream swatch image).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/active-ingredients-cards.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/active-ingredients-cards.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_active_ingredients.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.067Z"
+      }
+    },
+    "pdp_block_4": {
+      "title": "You Might Also Like Recommendations",
+      "category": "Service Showcase",
+      "classification": "unique",
+      "targetSchema": "layout_product_cross_sell",
+      "canonicalBasename": "cross-sell-shelf",
+      "coordinates": {
+        "x": 0,
+        "y": 66,
+        "width": 100,
+        "height": 14
+      },
+      "figmaNodeId": "27309:779",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "section_title",
+        "related_products_query"
+      ],
+      "notes": "Headline 'You might also like' with 4-column product carousel: Face Toner ($47.99 with -20% badge), Body Wash ($49.99), Body Serum ($49.99 with New badge), Face Mask ($49.99).",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/unique/cross-sell-shelf.html",
+        "phpTemplate": "dist-client/template-parts/blocks/unique/cross-sell-shelf.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_cross_sell_shelf.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": false,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.067Z"
+      }
+    },
+    "pdp_block_5": {
+      "title": "Instagram UGC Gallery",
+      "category": "Service Showcase",
+      "classification": "shared",
+      "targetSchema": "layout_instagram_feed",
+      "canonicalBasename": "instagram-gallery",
+      "coordinates": {
+        "x": 0,
+        "y": 80,
+        "width": 100,
+        "height": 10
+      },
+      "figmaNodeId": "27309:779",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "instagram_handle",
+        "gallery_images"
+      ],
+      "notes": "5-column square image grid with '@Skin—Clinic' branding.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/shared/instagram-gallery.html",
+        "phpTemplate": "dist-client/template-parts/blocks/shared/instagram-gallery.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_instagram_gallery.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.067Z"
+      }
+    },
+    "pdp_block_6": {
+      "title": "Newsletter Capture",
+      "category": "Callout & Lead Capture",
+      "classification": "shared",
+      "targetSchema": "layout_newsletter_capture",
+      "canonicalBasename": "newsletter-banner",
+      "coordinates": {
+        "x": 0,
+        "y": 90,
+        "width": 100,
+        "height": 10
+      },
+      "figmaNodeId": "27309:779",
+      "figmaNodeName": "Desktop",
+      "keyFields": [
+        "headline",
+        "subheadline",
+        "form_action_url"
+      ],
+      "notes": "Full-bleed editorial background with email capture.",
+      "artifacts": {
+        "htmlBlock": "dist-preview/blocks/shared/newsletter-banner.html",
+        "phpTemplate": "dist-client/template-parts/blocks/shared/newsletter-banner.php",
+        "liquidSection": null,
+        "acfJson": "dist-client/acf-json/group_newsletter.json"
+      },
+      "status": {
+        "htmlGenerated": true,
+        "phpGenerated": true,
+        "acfGenerated": true,
+        "visualVerified": false,
+        "verificationScore": null,
+        "verificationVerdict": null,
+        "lastUpdated": "2026-09-14T15:33:17.067Z"
+      }
+    }
+  }
+}

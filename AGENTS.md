@@ -118,6 +118,37 @@ The AI analyzes blocks across all screens and organizes them into:
 - Companion JSON field groups are exported to `dist-client/acf-json/group_[slug].json`.
 - All WordPress template parts implement `app_get_field()` and `app_get_repeater_rows()` for safe fallback across ACF Pro, Free ACF / Secure Custom Fields (SCF) / OpenFields, and native `get_post_meta()` so templates never fail even without ACF Pro active.
 
+### 5. Deterministic Filename Naming Convention Contract
+All AI architect skills, code generators, and contributors must strictly adhere to the deterministic naming rule. The `targetSchema` in each block's vision JSON spec directly drives the output filename:
+
+| `targetSchema` in Vision JSON | Canonical Basename | Shared / Unique |
+| :--- | :--- | :--- |
+| `global_header_options` | `header-nav` | Shared |
+| `global_footer_options` | `footer-global` | Shared |
+| `announcement_bar` | `announcement-bar` | Shared |
+| `layout_instagram_feed` | `instagram-gallery` | Shared |
+| `layout_newsletter_capture` | `newsletter-banner` | Shared |
+| `layout_hero_editorial` | `hero-editorial` | Unique |
+| `layout_product_query_grid` | `best-sellers-shelf` | Unique |
+| `layout_category_tiles` | `category-spotlight` | Unique |
+| `layout_featured_products` | `featured-products-shelf` | Unique |
+| `layout_split_narrative` | `sheet-mask-feature` | Unique |
+| `layout_journal_articles_grid` | `journal-teaser` | Unique |
+| `layout_dual_promo_banners` | `dual-promo-cards` | Unique |
+| `layout_full_image_overlay` | `oceanic-banner` | Unique |
+| `layout_testimonials_repeater` | `testimonials-slider` | Unique |
+
+**Derivation Rule**:
+1. Strip prefixes: `layout_` or `global_`.
+2. Replace underscores `_` with hyphens `-`.
+3. Strip trailing noise suffixes: `_grid`, `_feed`, `_options`, `_repeater`, `_table`, `_form`, `_shelf`.
+4. Result = Canonical Basename → used for `[basename].html`, `[basename].php`, and `group_[basename].json`.
+
+### 6. Block Vision Verification Pipeline & Manifest Architecture
+- **Layer 1 (Source of Truth)**: Full-page design PNGs (`inputs/vision/[slug].png`) are never sliced permanently. Deterministic mapping is indexed in `inputs/vision/[slug].manifest.json` (~4KB).
+- **Layer 2 (Runtime Temp)**: `scripts/verify-blocks.mjs` crops the design region (`dist-preview/.tmp/crops/`) using `pngjs` and captures a headless Playwright render with full Tailwind CDN styling (`dist-preview/.tmp/renders/`).
+- **Layer 3 (Antigravity Native Vision)**: Gemini evaluates design crop vs HTML render across 5 dimensions (Layout, Typography, Copy, Color, UI Completeness) without external API keys. Verdicts (PASS ≥ 85, WARN 70–84, FAIL < 70) are saved back to `[slug].manifest.json` and `dist-preview/reports/[slug]-block-verification.json`. Temp files are deleted via `npm run verify:cleanup`.
+
 ---
 
 ## 6. Dynamic Modular Architecture & Zero-Inline-Code Standards

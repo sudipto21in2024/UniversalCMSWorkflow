@@ -25,6 +25,10 @@
 /inputs/vision/*.png
 /tools/visual-annotator/inputs/*.png
 
+# Block verification temp files (runtime-only crops + renders, auto-deleted)
+# manifest.json files in inputs/vision/ are intentionally NOT ignored — they are committed
+dist-preview/.tmp/
+
 # .NET / C# build artifacts (references)
 **/bin/
 **/obj/
